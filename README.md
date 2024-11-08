@@ -1,7 +1,6 @@
 <div align="center">
     <h1>✨ TheLp's Hyprland dotfiles ✨</h1>
     <h1>✨ Forked from shub39 ✨</h1>
-    <h3><i>Nothing like gruvbox</i></h3>
 </div>
 
 <div align="center"> 
