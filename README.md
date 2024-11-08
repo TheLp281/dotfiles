@@ -1,15 +1,11 @@
 <div align="center">
-    <h1>✨ shub39's Hyprland dotfiles ✨</h1>
-    <h3><i>Nothing like gruvbox</i></h3>
+    <h1>✨ TheLp's Hyprland dotfiles ✨</h1>
+    <h1>✨ Forked from shub39 ✨</h1>
 </div>
 
 <div align="center"> 
 
-![](https://img.shields.io/github/last-commit/shub39/dotfiles?&style=for-the-badge&color=FFB1C8&logoColor=D9E0EE&labelColor=292324)
-![](https://img.shields.io/github/stars/shub39/dotfiles?style=for-the-badge&logo=andela&color=FFB686&logoColor=D9E0EE&labelColor=292324)
 ![](https://img.shields.io/github/repo-size/shub39/dotfiles?color=CAC992&label=SIZE&logo=googledrive&style=for-the-badge&logoColor=D9E0EE&labelColor=292324)
-![](https://img.shields.io/badge/issues-Skill-green?style=for-the-badge&color=CCE8E9&logoColor=D9E0EE&labelColor=292324) 
-[![](https://img.shields.io/badge/watch-Youtube-red?style=for-the-badge&logo=youtube&color=CCE8E9&logoColor=D9E0EE&labelColor=292324)](https://www.youtube.com/watch?v=3FMDvy9PnIA) 
 
 </a>
 </div>
@@ -47,7 +43,3 @@
 - On fresh Hyprland, install all the above packages and clone this repository at `~/.config`
 - add `source = ~/.config/dotfiles/hyprland/hyprland.conf` to `~/.config/hypr/hyprland.conf` and remove everything else
 - reboot
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=shub39/dotfiles&type=Date)](https://star-history.com/#shub39/dotfiles&Date)
