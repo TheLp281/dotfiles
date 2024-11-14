@@ -29,6 +29,7 @@
 	"temperature", 
 	"memory",
 	"custom/swaync",
-	"pulseaudio"
+	"pulseaudio",
+        "tray"
 	]
 }
