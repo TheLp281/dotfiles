@@ -92,4 +92,4 @@ yay -S cava hyprshot wlogout neovim
 
 > ### Other programs like browsers and players are listed in `hyprland/defaultPrograms.conf` edit accordingly
 > ### All keybinds are listed at `hyprland/keybinds.conf` edit accordingly
-> ### Explore hyprland wiki and figure everything else on your own
+> ### 🎉That’s all for now. Enjoy your new environment!🎉
