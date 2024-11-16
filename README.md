@@ -34,9 +34,14 @@
 - cava (AUR)
 - hyprshot (AUR)
 - Wlogout (AUR)
+
+### Install Required Packages:
+
 pacman -S hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar fastfetch imagemagick mpv copyq polkit-gnome neovim
 
 yay -S neovim cava hyprshot wlogout
+
+
 ## Optional Packages
 
   ## For fish:
