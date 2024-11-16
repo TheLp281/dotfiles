@@ -36,11 +36,13 @@
 - Wlogout (AUR)
 
 ### Install Required Packages:
-
+ ```bash
 pacman -S hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar fastfetch imagemagick mpv copyq polkit-gnome neovim
+ ```
 
+```bash
 yay -S neovim cava hyprshot wlogout
-
+```
 
 ## Optional Packages
 
