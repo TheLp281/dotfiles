@@ -28,7 +28,8 @@
 - imagemagick
 - mpv
 - copyq
-- polkit-gnome 
+- polkit-gnome
+- nwg-drawer
 - neovim (AUR)
 - cava (AUR)
 - hyprshot (AUR)
@@ -36,11 +37,11 @@
 
 ### Install Required Packages:
  ```bash
-pacman -S hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar fastfetch imagemagick mpv copyq polkit-gnome neovim
+pacman -S hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar fastfetch imagemagick mpv copyq polkit-gnome nwg-drawer
  ```
 
 ```bash
-yay -S cava hyprshot wlogout
+yay -S cava hyprshot wlogout neovim
 ```
 
 ## Optional Packages
