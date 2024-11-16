@@ -41,18 +41,17 @@ pacman -S hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swa
  ```
 
 ```bash
-yay -S neovim cava hyprshot wlogout
+yay -S cava hyprshot wlogout
 ```
 
 ## Optional Packages
   ## For fish:
-    
     ```bash
-    pacman -S fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper
+       pacman -S fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper
     ```
 
     ```bash
-    yay -S cpuid moc
+       yay -S cpuid moc
     ```
     
     Spark installation (required for fish):
