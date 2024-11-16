@@ -43,7 +43,7 @@ sudo pacman -S --needed hyprland hyprpaper hyprpicker hyprlock hypridle kitty ro
  ```
 
 ```bash
-yay -S cava hyprshot wlogout neovim
+yay -S cava hyprshot wlogout
 ```
 
 ## Optional Packages
@@ -52,7 +52,7 @@ yay -S cava hyprshot wlogout neovim
     yay -S cpuid moc pokemon-colorscripts
     sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
   ## For neovim:
-    sudo pacman -S neovim
+    yay -S neovim-git
   ## For music
     sudo pacman -S cmus 
  
