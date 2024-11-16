@@ -30,7 +30,7 @@
 - mpv
 - copyq
 - polkit-gnome 
-- neovim (nvchad - AUR)
+- neovim
 - cava (AUR)
 - hyprshot (AUR)
 - Wlogout (AUR)
@@ -47,12 +47,12 @@ yay -S cava hyprshot wlogout
 ## Optional Packages
   ## For fish:
 
-       pacman -S fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper
-       yay -S cpuid moc
-       sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
-  
+    pacman -S fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper
+    yay -S cpuid moc
+    sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
+  ## For neovim:
+    pacman -S neovim
   ## For music
-
     pacman -S cmus 
  
 
