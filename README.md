@@ -57,15 +57,18 @@ yay -S neovim cava hyprshot wlogout
       sed -i 's/^gtk-cursor-theme-name=.*/gtk-cursor-theme-name=hatsunemiku/' ~/.config/gtk-3.0/settings.ini
     
   
-> ### Other programs like browsers and players are listed in `hyprland/defaultPrograms.conf` edit accordingly
-> ### All keybinds are listed at `hyprland/keybinds.conf` edit accordingly
-> ### Explore hyprland wiki and figure everything else on your own
 
 ## Quick Start
 
-- On fresh Hyprland, install all the above packages and clone this repository at `~/.config`
+- On fresh Hyprland, install all required packages and clone this repository at `~/.config`
 - Add `source = ~/.config/dotfiles/hyprland/hyprland.conf` to `~/.config/hypr/hyprland.conf` and remove everything else
      echo "source = ~/.config/dotfiles/hyprland/hyprland.conf" > ~/.config/hypr/hyprland.conf
 - Copy waybar folder contents into ~/.config/waybar
 - Copy fish folder contents into ~/.config/fish (optional)
 - Reboot
+
+
+
+> ### Other programs like browsers and players are listed in `hyprland/defaultPrograms.conf` edit accordingly
+> ### All keybinds are listed at `hyprland/keybinds.conf` edit accordingly
+> ### Explore hyprland wiki and figure everything else on your own
