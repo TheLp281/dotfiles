@@ -60,7 +60,9 @@ yay -S neovim cava hyprshot wlogout
       sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
     ```
   ## For music
-    pacman -S cmus
+    ```bash
+    pacman -S cmus 
+    ```
 
   ## For miku cursor (taken from supermariofps)
   - copy hatsunemiku folder into /usr/share/icons
@@ -76,6 +78,9 @@ yay -S neovim cava hyprshot wlogout
 ## Quick Start
 
 - On fresh Hyprland, install all required packages and clone this repository at `~/.config`
+    ```bash
+    git clone https://github.com/TheLp281/dotfiles ~/.config
+    ```
 - Add `source = ~/.config/dotfiles/hyprland/hyprland.conf` to `~/.config/hypr/hyprland.conf` and remove everything else
     ```bash
      echo "source = ~/.config/dotfiles/hyprland/hyprland.conf" > ~/.config/hypr/hyprland.conf
