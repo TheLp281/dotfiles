@@ -1,6 +1,7 @@
 <div align="center">
     <h1>✨ TheLp's Hyprland dotfiles ✨</h1>
     <h1>✨ Forked from shub39 ✨</h1>
+    <h1>✨ Merged with EviLuci's dotfiles ✨</h1>
 </div>
 
 <div align="center"> 
@@ -20,19 +21,37 @@
 
 ## Required Packages
 
-- Hyprland, Hyprshot, Hyprpaper, Hyprpicker, Hyprlock, Hypridle
+- Hyprland, Hyprpaper, Hyprpicker, Hyprlock, Hypridle
 - Kitty
 - Rofi `rofi-wayland`
 - Swaync
 - Waybar
 - Wlogout
-- scrcpy
 - fastfetch and imagemagick
 - mpv
 - copyq
-- cava
+- wezterm
 - polkit-gnome 
 - neovim (nvchad)
+- cava (AUR)
+- hyprshot (AUR)
+
+## Optional Packages
+
+  ## For fish:
+    fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper
+    cpuid (AUR) moc (AUR)
+
+    Spark installation:
+      sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
+  ## For music
+    cmus
+  ## For wezterm
+    ttf-firacode-nerd
+
+  ## For miku cursor (taken from supermariofps)
+  - copy miku-cursor folder into /usr/share/icons
+  - in ~/.config/gtk-3.0/settings.ini set gtk-cursor-theme-name to hatsunemiku
 
 > ### Other programs like browsers and players are listed in `hyprland/defaultPrograms.conf` edit accordingly
 > ### All keybinds are listed at `hyprland/keybinds.conf` edit accordingly
@@ -41,5 +60,8 @@
 ## Quick Start
 
 - On fresh Hyprland, install all the above packages and clone this repository at `~/.config`
-- add `source = ~/.config/dotfiles/hyprland/hyprland.conf` to `~/.config/hypr/hyprland.conf` and remove everything else
-- reboot
+- Add `source = ~/.config/dotfiles/hyprland/hyprland.conf` to `~/.config/hypr/hyprland.conf` and remove everything else
+- Copy wezterm folder contents into ~/.config/wezterm
+- Copy waybar folder contents into ~/.config/waybar
+- Copy fish folder contents into ~/.config/fish
+- Reboot
