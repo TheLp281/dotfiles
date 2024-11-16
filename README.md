@@ -48,9 +48,6 @@ yay -S cava hyprshot wlogout
   ## For fish:
     ```bash
        pacman -S fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper
-    ```
-
-    ```bash
        yay -S cpuid moc
     ```
     
