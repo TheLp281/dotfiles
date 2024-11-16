@@ -24,13 +24,12 @@
 - rofi-wayland
 - Swaync
 - Waybar
-
 - fastfetch
 - imagemagick
 - mpv
 - copyq
 - polkit-gnome 
-- neovim
+- neovim (AUR)
 - cava (AUR)
 - hyprshot (AUR)
 - Wlogout (AUR)
