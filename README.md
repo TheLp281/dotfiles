@@ -49,11 +49,7 @@ yay -S cava hyprshot wlogout
     ```bash
        pacman -S fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper
        yay -S cpuid moc
-    ```
-    
-    Spark installation (required for fish):
-    ```bash
-      sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
+       sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
     ```
   ## For music
     ```bash
