@@ -46,15 +46,15 @@ yay -S cava hyprshot wlogout
 
 ## Optional Packages
   ## For fish:
-    ```bash
+
        pacman -S fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper
        yay -S cpuid moc
        sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
-    ```
+  
   ## For music
-    ```bash
+
     pacman -S cmus 
-    ```
+ 
 
   ## For miku cursor (taken from supermariofps)
   - copy hatsunemiku folder into /usr/share/icons
