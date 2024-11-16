@@ -45,31 +45,49 @@ yay -S neovim cava hyprshot wlogout
 ```
 
 ## Optional Packages
-
   ## For fish:
-    fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper
-    cpuid (AUR) moc (AUR)
+    
+    ```bash
+    pacman -S fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper
+    ```
 
+    ```bash
+    yay -S cpuid moc
+    ```
+    
     Spark installation (required for fish):
+    ```bash
       sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
+    ```
   ## For music
-    cmus
+    pacman -S cmus
 
   ## For miku cursor (taken from supermariofps)
   - copy hatsunemiku folder into /usr/share/icons
+      ```bash
       sudo cp -r ~/.config/dotfiles/hatsunemiku /usr/share/icons
+      ```
   - in ~/.config/gtk-3.0/settings.ini set gtk-cursor-theme-name to hatsunemiku
+      ```bash
       sed -i 's/^gtk-cursor-theme-name=.*/gtk-cursor-theme-name=hatsunemiku/' ~/.config/gtk-3.0/settings.ini
-    
+      ```
   
 
 ## Quick Start
 
 - On fresh Hyprland, install all required packages and clone this repository at `~/.config`
 - Add `source = ~/.config/dotfiles/hyprland/hyprland.conf` to `~/.config/hypr/hyprland.conf` and remove everything else
+    ```bash
      echo "source = ~/.config/dotfiles/hyprland/hyprland.conf" > ~/.config/hypr/hyprland.conf
+     ```
 - Copy waybar folder contents into ~/.config/waybar
+  ```bash
+  cp -r ~/.config/dotfiles/waybar ~/.config/waybar
+  ```
 - Copy fish folder contents into ~/.config/fish (optional)
+  ```bash
+  cp -r ~/.config/dotfiles/fish ~/.config/fish
+  ```
 - Reboot
 
 
