@@ -61,6 +61,7 @@
 
 - On fresh Hyprland, install all the above packages and clone this repository at `~/.config`
 - Add `source = ~/.config/dotfiles/hyprland/hyprland.conf` to `~/.config/hypr/hyprland.conf` and remove everything else
+     echo "source = ~/.config/dotfiles/hyprland/hyprland.conf" > ~/.config/hypr/hyprland.conf
 - Copy wezterm folder contents into ~/.config/wezterm
 - Copy waybar folder contents into ~/.config/waybar
 - Copy fish folder contents into ~/.config/fish
