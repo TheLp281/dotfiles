@@ -56,7 +56,7 @@ yay -S cava hyprshot wlogout neovim
     pacman -S cmus 
  
 
-  ## For miku cursor (taken from supermariofps)
+  ## For miku cursor
   - copy hatsunemiku folder into /usr/share/icons
       ```bash
       sudo cp -r ~/.config/dotfiles/hatsunemiku /usr/share/icons
