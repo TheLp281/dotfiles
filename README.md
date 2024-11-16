@@ -6,8 +6,6 @@
 
 <div align="center"> 
 
-![](https://img.shields.io/github/repo-size/shub39/dotfiles?color=CAC992&label=SIZE&logo=googledrive&style=for-the-badge&logoColor=D9E0EE&labelColor=292324)
-
 </a>
 </div>
 
