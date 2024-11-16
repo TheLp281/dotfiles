@@ -19,13 +19,15 @@
 
 ## Required Packages
 
-- Hyprland, Hyprpaper, Hyprpicker, Hyprlock, Hypridle
-- Kitty
+- hyprland, hyprpaper, hyprpicker, hyprlock, hypridle
+- kitty
 - rofi-wayland
-- Swaync
-- Waybar
+- swaync
+- waybar
 - fastfetch
 - imagemagick
+- pulseaudio
+- pavucontrol
 - mpv
 - copyq
 - polkit-gnome
@@ -33,11 +35,11 @@
 - neovim (AUR)
 - cava (AUR)
 - hyprshot (AUR)
-- Wlogout (AUR)
+- wlogout (AUR)
 
 ### Install Required Packages:
  ```bash
-sudo pacman -S --needed hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar fastfetch imagemagick mpv copyq polkit-gnome nwg-drawer
+sudo pacman -S --needed hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar fastfetch imagemagick mpv copyq polkit-gnome nwg-drawer pulseaudio pavucontrol
  ```
 
 ```bash
@@ -46,7 +48,6 @@ yay -S cava hyprshot wlogout neovim
 
 ## Optional Packages
   ## For fish:
-
     sudo pacman -S --needed fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper thefuck
     yay -S cpuid moc pokemon-colorscripts
     sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
