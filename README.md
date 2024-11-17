@@ -32,6 +32,7 @@
 - copyq
 - polkit-gnome
 - nwg-drawer
+- mpd-mpris
 - neovim (AUR)
 - cava (AUR)
 - hyprshot (AUR)
@@ -39,7 +40,7 @@
 
 ### Install Required Packages:
  ```bash
-sudo pacman -S --needed hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar fastfetch imagemagick mpv copyq polkit-gnome nwg-drawer pulseaudio pavucontrol
+sudo pacman -S --needed hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar fastfetch imagemagick mpv copyq polkit-gnome nwg-drawer pulseaudio pavucontrol mpd-mpris
  ```
 
 ```bash
@@ -66,6 +67,21 @@ yay -S cava hyprshot wlogout
       ```bash
       sed -i 's/^gtk-cursor-theme-name=.*/gtk-cursor-theme-name=hatsunemiku/' ~/.config/gtk-3.0/settings.ini
       ```
+  ## For copyq theme
+   - Open the CopyQ main window
+   - Open CopyQ Preferences under the File > Preferences menu
+   - Click Appearance in the Configuration window
+   - Click Load Theme and select theme.ini
+  ## For candy icons
+  - Copy candy folder into /usr/share/icons
+   ```bash
+   sudo cp -r ~/.config/dotfiles/candy /usr/share/icons
+   ```
+  - Set icon theme
+   ```bash
+   gsettings set org.gnome.desktop.interface icon-theme 'candy-icon'
+   ```
+   
   
 
 ## Quick Start
