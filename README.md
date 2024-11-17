@@ -66,6 +66,11 @@ yay -S cava hyprshot wlogout
       ```bash
       sed -i 's/^gtk-cursor-theme-name=.*/gtk-cursor-theme-name=hatsunemiku/' ~/.config/gtk-3.0/settings.ini
       ```
+  ## For copyq theme
+   - Open the CopyQ main window
+   - Open CopyQ Preferences under the File > Preferences menu
+   - Click Appearance in the Configuration window
+   - Click Load Theme and select theme.ini
   
 
 ## Quick Start
