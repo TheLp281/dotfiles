@@ -32,6 +32,7 @@
 - copyq
 - polkit-gnome
 - nwg-drawer
+- mpd-mpris
 - neovim (AUR)
 - cava (AUR)
 - hyprshot (AUR)
@@ -39,7 +40,7 @@
 
 ### Install Required Packages:
  ```bash
-sudo pacman -S --needed hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar fastfetch imagemagick mpv copyq polkit-gnome nwg-drawer pulseaudio pavucontrol
+sudo pacman -S --needed hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar fastfetch imagemagick mpv copyq polkit-gnome nwg-drawer pulseaudio pavucontrol mpd-mpris
  ```
 
 ```bash
