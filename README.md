@@ -26,13 +26,9 @@
     ```bash
      echo "source = ~/.config/dotfiles/hyprland/hyprland.conf" > ~/.config/hypr/hyprland.conf
      ```
-- Copy waybar folder contents into ~/.config/waybar
+-  - Create a symbolic link of waybar config
   ```bash
-  cp -r ~/.config/dotfiles/waybar ~/.config/waybar
-  ```
-- Copy fish folder contents into ~/.config/fish (optional)
-  ```bash
-  cp -r ~/.config/dotfiles/fish ~/.config/fish
+  ln -s ~/.config/dotfiles/waybar ~/.config/waybar
   ```
 - Reboot
 - 
@@ -101,7 +97,14 @@ yay -S cava hyprshot wlogout
    ```bash
    gsettings set org.gnome.desktop.interface icon-theme 'candy-icon'
    ```
-   
+  ## For notification center 
+   - Create a symbolic link of swaync config
+   - ln -s ~/.config/dotfiles/swaync ~/.config/swaync
+  ## For fish shell
+   - Create a symbolic link of fish config 
+  ```bash
+  ln -s ~/.config/dotfiles/fish ~/.config/fish
+  ```
   
 
 
