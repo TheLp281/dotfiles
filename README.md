@@ -43,6 +43,7 @@
 - rofi-wayland
 - swaync
 - waybar
+- noto-fonts-emoji
 - fastfetch
 - imagemagick
 - pulseaudio
@@ -59,7 +60,7 @@
 
 ### Install Required Packages:
  ```bash
-sudo pacman -S --needed hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar fastfetch imagemagick mpv copyq polkit-gnome nwg-drawer pulseaudio pavucontrol mpd-mpris
+sudo pacman -S --needed hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar noto-fonts-emoji fastfetch imagemagick mpv copyq polkit-gnome nwg-drawer pulseaudio pavucontrol mpd-mpris
  ```
 
 ```bash
