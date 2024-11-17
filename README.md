@@ -31,7 +31,7 @@
   ln -s ~/.config/dotfiles/waybar ~/.config/waybar
   ```
 - Reboot
-- 
+
 ## Required Packages
 
 - hyprland, hyprpaper, hyprpicker, hyprlock, hypridle
@@ -50,7 +50,6 @@
 - nwg-drawer
 - mpd-mpris
 - neovim (AUR)
-- cava (AUR)
 - hyprshot (AUR)
 - wlogout (AUR)
 
@@ -60,7 +59,7 @@ sudo pacman -S --needed hyprland hyprpaper hyprpicker hyprlock hypridle kitty ro
  ```
 
 ```bash
-yay -S cava hyprshot wlogout
+yay -S hyprshot wlogout
 ```
 
 ## Optional Packages
