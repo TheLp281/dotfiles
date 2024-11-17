@@ -9,13 +9,16 @@
 </a>
 </div>
 
-![1](screenshots/1.png)
+![1](screenshots/screenshot_2024-11-17_22-43-14.png)
 
-![2](screenshots/2.png)
+![2](screenshots/screenshot_2024-11-17_22-48-25.png)
 
-![3](screenshots/3.png)
+![3](screenshots/screenshot_2024-11-17_22-53-31.png)
 
-![4](screenshots/4.png)
+![4](screenshots/2024-11-17-230108_hyprshot.png)
+
+![5](screenshots/screenshot_2024-11-17_22-49-13.png)
+
 ## Quick Start
 
 - On fresh Hyprland, install all required packages and clone this repository at `~/.config`
