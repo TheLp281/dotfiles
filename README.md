@@ -78,9 +78,9 @@ yay -S cava hyprshot wlogout
    sudo cp -r ~/.config/dotfiles/candy /usr/share/icons
    ```
   - Set icon theme
-      ```bash
-      gsettings set org.gnome.desktop.interface icon-theme 'candy-icon'
-      ```
+   ```bash
+   gsettings set org.gnome.desktop.interface icon-theme 'candy-icon'
+   ```
    
   
 
