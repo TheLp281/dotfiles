@@ -16,7 +16,26 @@
 ![3](screenshots/3.png)
 
 ![4](screenshots/4.png)
+## Quick Start
 
+- On fresh Hyprland, install all required packages and clone this repository at `~/.config`
+    ```bash
+    git clone https://github.com/TheLp281/dotfiles ~/.config
+    ```
+- Add `source = ~/.config/dotfiles/hyprland/hyprland.conf` to `~/.config/hypr/hyprland.conf` and remove everything else
+    ```bash
+     echo "source = ~/.config/dotfiles/hyprland/hyprland.conf" > ~/.config/hypr/hyprland.conf
+     ```
+- Copy waybar folder contents into ~/.config/waybar
+  ```bash
+  cp -r ~/.config/dotfiles/waybar ~/.config/waybar
+  ```
+- Copy fish folder contents into ~/.config/fish (optional)
+  ```bash
+  cp -r ~/.config/dotfiles/fish ~/.config/fish
+  ```
+- Reboot
+- 
 ## Required Packages
 
 - hyprland, hyprpaper, hyprpicker, hyprlock, hypridle
@@ -84,25 +103,7 @@ yay -S cava hyprshot wlogout
    
   
 
-## Quick Start
 
-- On fresh Hyprland, install all required packages and clone this repository at `~/.config`
-    ```bash
-    git clone https://github.com/TheLp281/dotfiles ~/.config
-    ```
-- Add `source = ~/.config/dotfiles/hyprland/hyprland.conf` to `~/.config/hypr/hyprland.conf` and remove everything else
-    ```bash
-     echo "source = ~/.config/dotfiles/hyprland/hyprland.conf" > ~/.config/hypr/hyprland.conf
-     ```
-- Copy waybar folder contents into ~/.config/waybar
-  ```bash
-  cp -r ~/.config/dotfiles/waybar ~/.config/waybar
-  ```
-- Copy fish folder contents into ~/.config/fish (optional)
-  ```bash
-  cp -r ~/.config/dotfiles/fish ~/.config/fish
-  ```
-- Reboot
 
 
 
