@@ -72,6 +72,16 @@ yay -S cava hyprshot wlogout
    - Open CopyQ Preferences under the File > Preferences menu
    - Click Appearance in the Configuration window
    - Click Load Theme and select theme.ini
+  ## For candy icons
+  - Copy candy folder into /usr/share/icons
+   ```bash
+   sudo cp -r ~/.config/dotfiles/candy /usr/share/icons
+   ```
+  - Set icon theme
+      ```bash
+      gsettings set org.gnome.desktop.interface icon-theme 'candy-icon'
+      ```
+   
   
 
 ## Quick Start
