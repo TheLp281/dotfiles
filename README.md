@@ -75,7 +75,7 @@ yay -S hyprshot wlogout --noconfirm
 
 ## For fish
 
-    sudo pacman -S --needed --noconfirm fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper thefuck
+    sudo pacman -S --needed --noconfirm fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper thefuck starship
     yay -S cpuid moc pokemon-colorscripts
     sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
 
