@@ -64,7 +64,7 @@ ln -s ~/.config/dotfiles/waybar ~/.config/waybar
 ### Install Required Packages
 
 ```bash
-sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar noto-fonts-emoji fastfetch imagemagick mpv copyq polkit-gnome nwg-drawer pavucontrol mpd-mpris
+sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar noto-fonts-emoji fastfetch imagemagick mpv copyq polkit-gnome nwg-drawer pavucontrol
 ```
 
 ```bash
@@ -87,7 +87,7 @@ yay -S hyprshot wlogout --noconfirm
 
 ## For music
 
-    sudo pacman -S cmus --noconfirm
+    sudo pacman -S --noconfirm cmus mpd-mpris
 
 ## For miku cursor
 
