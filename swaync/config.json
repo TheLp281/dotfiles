@@ -1,23 +1,27 @@
 {
- 
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
-  "positionY": "top",
+  "positionY": "bottom",
+  "control-center-positionX": "none",
+  "control-center-positionY": "none",
+  "control-center-margin-top": 8,
+  "control-center-margin-bottom": 8,
+  "control-center-margin-right": 8,
+  "control-center-margin-left": 8,
+  "control-center-width": 400,
+  "control-center-height": 600,
+  "fit-to-screen": true,
   "layer": "overlay",
-  "control-center-margin-top": 20,
-  "control-center-margin-bottom": 20,
-  "control-center-margin-right": 20,
-  "control-center-margin-left": 20,
+  "control-center-layer": "overlay",
+  "cssPriority": "user",
   "notification-icon-size": 64,
   "notification-body-image-height": 100,
   "notification-body-image-width": 200,
-  "timeout": 3,
-  "timeout-low": 2,
+  "notification-inline-replies": false,
+  "timeout": 10,
+  "timeout-low": 5,
   "timeout-critical": 0,
-  "fit-to-screen": false,
-  "control-center-width": 500,
-  "control-center-height": 900,
-  "notification-window-width": 490,
+  "notification-window-width": 500,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
   "transition-time": 200,
@@ -25,26 +29,103 @@
   "hide-on-action": true,
   "script-fail-notify": true,
   "widgets": [
-      "title",
-      "notifications",
-      "mpris"
+    "menubar",
+    "buttons-grid",
+    "backlight",
+    "volume",
+    "mpris",
+    "inhibitors",
+    "title",
+    "dnd",
+    "notifications"
   ],
   "widget-config": {
-      "title": {
-          "text": "Notification Center",
-          "clear-all-button": true,
-          "button-text": "󰆴 Clear All"
+    "inhibitors": {
+      "text": "Inhibitors",
+      "button-text": "Clear All",
+      "clear-all-button": true
+    },
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 6
+    },
+    "backlight": {
+      "label": "🔆",
+      "device": "intel_backlight",
+      "min": 1
+    },
+    "volume": {
+      "label": "🔊"
+    },
+    "menubar": {
+      "menu#power-buttons": {
+        "label": "",
+        "position": "right",
+        "actions": [
+          {
+            "label": "   Reboot",
+            "command": "systemctl reboot"
+          },
+          {
+            "label": "   Lock",
+            "command": "hyprlock"
+          },
+          {
+            "label": "   Logout",
+            "command": "hyprctl dispatch exit"
+          },
+          {
+            "label": "   Suspend",
+            "command": "systemctl suspend"
+          },
+          {
+            "label": "   Shut down",
+            "command": "systemctl poweroff"
+          }
+        ]
       },
-      "dnd": {
-          "text": "Leave me alone!!"
-      },
-      "label": {
-          "max-lines": 1,
-          "text": "Notification Center"
-      },
-      "mpris": {
-          "image-size": 96,
-          "image-radius": 7
+      "menu#dotfiles-buttons": {
+        "label": " ",
+        "position": "left",
+        "actions": [
+          {
+            "label": "  Github",
+            "command": "firefox https://github.com"
+          }
+        ]
       }
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": " ",
+          "command": "nm-connection-editor"
+        },
+        {
+          "label": "󰸉",
+          "command": "waypaper-engine"
+        },
+        {
+          "label": " ",
+          "command": "kitty -e cmus"
+        },
+        {
+          "label": "",
+          "command": "kitty -e paru"
+        },
+        {
+          "label": "",
+          "command": "firefox"
+        }
+      ]
+    }
   }
 }
