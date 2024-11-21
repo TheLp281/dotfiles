@@ -1,4 +1,9 @@
 
+alias dot=dotnet
+alias py=python
+alias mp=mousepad
+export MAKEFLAGS="-j8" 
+
 ### ADDING TO THE PATH
 # First line removes the path; second line sets it.  Without the first line,
 # your path gets massive and fish becomes very slow.
