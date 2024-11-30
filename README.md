@@ -55,7 +55,7 @@ ln -s ~/.config/dotfiles/waybar ~/.config/waybar
 - mpv
 - copyq
 - polkit-gnome
-- nwg-drawer
+- ulauncher
 - mpd-mpris
 - neovim (AUR)
 - hyprshot (AUR)
@@ -64,7 +64,7 @@ ln -s ~/.config/dotfiles/waybar ~/.config/waybar
 ### Install Required Packages
 
 ```bash
-sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar noto-fonts-emoji fastfetch imagemagick mpv copyq polkit-gnome nwg-drawer pavucontrol
+sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar noto-fonts-emoji fastfetch imagemagick mpv copyq polkit-gnome ulauncher pavucontrol
 ```
 
 ```bash
