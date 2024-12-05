@@ -43,22 +43,7 @@ else
     echo "No orphaned packages found."
 fi
 
-# 3. Check for old kernel versions
-echo
-echo "Checking for old kernel versions..."
-current_kernel=$(uname -r)
-old_kernels=$(pacman -Q | grep -E '^linux' | grep -v "$current_kernel")
-
-if [ -n "$old_kernels" ]; then
-    old_kernels_size=$(echo "$old_kernels" | awk '{print $2}' | xargs pacman -Qi | awk '/Installed Size/ {s+=$3} END {print s}')
-    total_reclaimable_space=$((total_reclaimable_space + old_kernels_size))
-    echo "Old kernel versions found, these can be safely removed."
-    echo "$old_kernels"
-else
-    echo "No old kernel versions found."
-fi
-
-# 4. Estimate space that can be freed by cleaning the package cache (pacman)
+# 3. Estimate space that can be freed by cleaning the package cache (pacman)
 echo
 echo "Checking pacman package cache..."
 package_cache_size=$(du -sh /var/cache/pacman/pkg 2>/dev/null | awk '{print $1}')
@@ -70,7 +55,7 @@ else
     echo "/var/cache/pacman/pkg: Directory not accessible or empty."
 fi
 
-# 5. Clean up old log files (journal logs)
+# 4. Clean up old log files (journal logs)
 echo
 echo "Checking system journal logs..."
 log_size=$(journalctl --disk-usage 2>/dev/null | awk '{print $3 " " $4}')
