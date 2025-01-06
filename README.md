@@ -137,7 +137,7 @@ gsettings set org.gnome.desktop.interface icon-theme 'candy-icon'
 ln -s ~/.config/dotfiles/fish ~/.config/fish
 ```
 
-> ### Other programs like browsers and players are listed in `hyprland/defaultPrograms.conf` edit accordingly
+> ### Other programs like browsers and players are listed in `hyprland/defaultPrograms.conf`, edit accordingly
 >
 > ### All keybinds are listed at `hyprland/keybinds.conf` edit accordingly
 
