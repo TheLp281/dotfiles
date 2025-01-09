@@ -115,7 +115,7 @@
         },
         {
           "label": " ",
-          "command": "kitty -e cmus"
+          "command": "~/.config/dotfiles/hyprland/scripts/lofi.sh"
         },
         {
           "label": "",

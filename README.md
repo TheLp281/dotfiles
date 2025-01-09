@@ -19,12 +19,12 @@
 
 ![5](screenshots/screenshot_2024-11-17_22-49-13.png)
 
-## Quick Start
+## 🚀 Quick Start
 
 - On fresh Hyprland, install all required packages and clone this repository at `~/.config`
 
   ```bash
-  git clone https://github.com/TheLp281/dotfiles ~/.config
+  git clone --depth 1 https://github.com/TheLp281/dotfiles ~/.config
   ```
 
 - Add `source = ~/.config/dotfiles/hyprland/hyprland.conf` to `~/.config/hypr/hyprland.conf` and remove everything else
@@ -39,9 +39,16 @@
 ln -s ~/.config/dotfiles/waybar ~/.config/waybar
 ```
 
-- Reboot
+- - Add a wallpaper at ~/Pictures/Wallpapers.
 
-## Required Packages
+I personally prefer cloning wallpaper bank
+```bash
+git clone --depth 1 https://github.com/JaKooLit/Wallpaper-Bank ~/Pictures/Wallpapers
+```
+
+- Install packages below and relogin
+
+# Required Packages
 
 - hyprland, hyprpaper, hyprpicker, hyprlock, hypridle
 - kitty
@@ -55,7 +62,6 @@ ln -s ~/.config/dotfiles/waybar ~/.config/waybar
 - mpv
 - copyq
 - polkit-gnome
-- ulauncher
 - mpd-mpris
 - neovim (AUR)
 - hyprshot (AUR)
@@ -64,14 +70,14 @@ ln -s ~/.config/dotfiles/waybar ~/.config/waybar
 ### Install Required Packages
 
 ```bash
-sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar noto-fonts-emoji fastfetch imagemagick mpv copyq polkit-gnome ulauncher pavucontrol
+sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar noto-fonts-emoji fastfetch imagemagick mpv copyq polkit-gnome pavucontrol
 ```
 
 ```bash
 yay -S hyprshot wlogout --noconfirm
 ```
 
-## Optional Packages
+# Optional Packages
 
 ## For fish
 
@@ -87,7 +93,7 @@ yay -S hyprshot wlogout --noconfirm
 
 ## For music
 
-    sudo pacman -S --noconfirm cmus mpd-mpris
+    sudo pacman -S --noconfirm mpd-mpris
 
 ## For miku cursor
 
@@ -102,7 +108,6 @@ yay -S hyprshot wlogout --noconfirm
   ```bash
   sed -i 's/^gtk-cursor-theme-name=.*/gtk-cursor-theme-name=hatsunemiku/' ~/.config/gtk-3.0/settings.ini
   ```
-
 ## For copyq theme
 
 - Open the CopyQ main window
@@ -137,8 +142,8 @@ gsettings set org.gnome.desktop.interface icon-theme 'candy-icon'
 ln -s ~/.config/dotfiles/fish ~/.config/fish
 ```
 
-> ### Other programs like browsers and players are listed in `hyprland/defaultPrograms.conf` edit accordingly
+> ### Other programs like browsers and players are listed in `hyprland/defaultPrograms.conf`
 >
-> ### All keybinds are listed at `hyprland/keybinds.conf` edit accordingly
+> ### All keybinds are listed at `hyprland/keybinds.conf`
 
 ### 🎉That’s all for now. Enjoy your new environment!🎉
