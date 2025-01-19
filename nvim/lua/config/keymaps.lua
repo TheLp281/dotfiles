@@ -88,8 +88,11 @@ map({
 -- }, "<C-a>", "<esc>ggVG")
 --
 -- Select all text in the current buffer
-map('n', '<C-a>', ':keepjumps normal! ggyG<cr>', {
+map('i', '<C-a>', '<esc><cmd>keepjumps normal! ggVG<cr>', {
   desc = "Select all"
+})
+map('i', '<A-a>', '<esc><cmd>keepjumps normal! ggyG<cr>', {
+  desc = "Copy all"
 })
 
 -- quit
@@ -297,6 +300,11 @@ map("n", "<Tab>", "<cmd>bprevious<cr>", {
 })
 map("n", "<A-Tab>", "<cmd>bnext<cr>", {
   desc = "Next buffer"
+})
+
+-- folds
+map("n", "<leader>z", "<cmd>normal! zMzv<cr>", {
+  desc = "Fold all others"
 })
 
 -- Some cool remaps

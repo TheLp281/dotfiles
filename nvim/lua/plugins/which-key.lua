@@ -12,8 +12,8 @@ return {
           "v"
         },
         {
-          "n",
-          group = "Notes - Neorg"
+          "o",
+          group = "Obsidian"
         },
         {
           "a",
