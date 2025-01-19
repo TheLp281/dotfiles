@@ -56,12 +56,12 @@ tooltip {
 
 menu label,
 tooltip label {
-    color: rgb(0, 238, 255);
+    color: white
 }
 
 /* Workspaces Button Styling */
 #workspaces button {
-    color: rgb(0, 238, 255);
+    color: rgb(227, 180, 255);
     background: transparent;
     font-weight: bolder;
     box-shadow: inset 0 -3px transparent;
@@ -82,7 +82,7 @@ tooltip label {
 }
 
 #workspaces button.visible {
-    color: rgb(0, 238, 255);
+    color: white
 }
 
 #workspaces button.urgent {
@@ -148,7 +148,7 @@ window#waybar.empty {
 #image,
 #workspaces {
     background-color: black;
-    color: rgb(0, 238, 255);
+    color: white;
 }
 
 #power {
