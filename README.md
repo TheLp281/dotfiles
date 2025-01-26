@@ -63,6 +63,7 @@ git clone --depth 1 https://github.com/JaKooLit/Wallpaper-Bank ~/Pictures/Wallpa
 - copyq
 - polkit-gnome
 - mpd-mpris
+- polkit-kde-agent
 - neovim (AUR)
 - hyprshot (AUR)
 - wlogout (AUR)
@@ -70,7 +71,7 @@ git clone --depth 1 https://github.com/JaKooLit/Wallpaper-Bank ~/Pictures/Wallpa
 ### Install Required Packages
 
 ```bash
-sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar noto-fonts-emoji fastfetch imagemagick mpv copyq polkit-gnome pavucontrol
+sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar noto-fonts-emoji fastfetch imagemagick mpv copyq polkit-gnome pavucontrol polkit-kde-agent
 ```
 
 ```bash
