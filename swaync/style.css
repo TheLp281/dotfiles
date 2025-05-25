@@ -1,186 +1,206 @@
 /* Global styles */
 * {
-    font-family: FontAwesome, "FiraCode Nerd Font", "Material Icons";
-    font-weight: bold;
+  font-family: FontAwesome, "FiraCode Nerd Font", "Material Icons";
+  font-weight: bold;
 }
 
 /* Notification Row */
 .notification-row:focus,
 .notification-row:hover {
-    background: black;
+  background: black;
 }
 
 /* Notification */
 .notification {
-    background: black;
-    color: rgb(0, 238, 255);
-    border: 1px solid rgb(0, 238, 255);
+  background: black;
+  color: rgb(0, 238, 255);
+  border: 1px solid rgb(0, 238, 255);
 }
 .notification .critical {
-    background: black;
-    color: red;
+  background: black;
+  color: red;
 }
 
 .notification-content {
-    background: black;
+  background: black;
 }
 
 .close-button {
-    background: black;
-    color: rgb(0, 238, 255);
+  background: black;
+  color: rgb(0, 238, 255);
 }
 
 .close-button:hover {
-    background: rgb(0, 238, 255);
-    color : black;
+  background: rgb(0, 238, 255);
+  color: black;
 }
 
 /* Notification Actions */
 .notification-default-action,
 .notification-action {
-    background: black;
-    border: 1px solid rgb(0, 238, 255);
-    color: rgb(0, 238, 255);
+  background: black;
+  border: 1px solid rgb(0, 238, 255);
+  color: rgb(0, 238, 255);
 }
 
 .notification-default-action:hover,
 .notification-action:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
-    border: 1px solid black;
+  background: rgb(0, 238, 255);
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #fa8bff 90%
+  );
+  color: black;
+  border: 1px solid black;
 }
 
 /* The "extra" optional bottom notification image */
 .body-image {
-    color: rgb(0, 238, 255);
+  color: rgb(0, 238, 255);
 }
 /* Notification summary/title */
 .summary {
-    color: rgb(0, 238, 255);
+  color: rgb(0, 238, 255);
 }
 /* Notification time-ago */
 .time {
-    color: rgb(0, 238, 255);
+  color: rgb(0, 238, 255);
 }
 /* Notification body */
 .body {
-    color: rgb(0, 238, 255);
+  color: rgb(0, 238, 255);
 }
 
 /* The inline reply section */
 .inline-reply .inline-reply-entry {
-    color: rgb(0, 238, 255);
-    caret-color: rgb(0, 238, 255);
-    background: black;
+  color: rgb(0, 238, 255);
+  caret-color: rgb(0, 238, 255);
+  background: black;
 }
 
 .inline-reply-button {
-    color: rgb(0, 238, 255);
-    background: black;
+  color: rgb(0, 238, 255);
+  background: black;
 }
 .inline-reply-button:disabled {
-    color: rgb(248, 115, 237);
-    background: black;
+  color: rgb(248, 115, 237);
+  background: black;
 }
 .inline-reply-button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+  background: rgb(0, 238, 255);
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #fa8bff 90%
+  );
+  color: black;
 }
 
 /* Styling only for Grouped Notifications */
 .notification-group {
-    background: black;
-    color: rgb(0, 238, 255);
-    border: none;
+  background: black;
+  color: rgb(0, 238, 255);
+  border: none;
 }
 .notification-group-headers,
 .notification-group-icon,
 .notification-group-header,
 .notification-group-buttons {
-    color: rgb(0, 238, 255);
+  color: rgb(0, 238, 255);
 }
 
 /* The Control Center which contains the old notifications + widgets */
 .control-center {
-    background: black;
-    color: rgb(0, 238, 255);
-    border: 2px solid rgb(0, 238, 255);
+  background: black;
+  color: rgb(0, 238, 255);
+  border: 2px solid rgb(0, 238, 255);
 }
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
-    background-color: black;
+  background-color: black;
 }
 
 /* The list of notifications */
 .control-center-list {
-    background: transparent;
+  background: transparent;
 }
 
 .floating-notifications {
-    background: transparent;
+  background: transparent;
 }
 
 /* Window behind control center and on all other monitors */
 .blank-window {
-    background: transparent;
+  background: transparent;
 }
 
 /*** Widgets ***/
 
 /* Title widget */
 .widget-title {
-    color: rgb(0, 238, 255);
-    font-size: large;
+  color: rgb(0, 238, 255);
+  font-size: large;
 }
 
-.widget-title>button {
-    color: rgb(0, 238, 255);
-    background: black;
-    border: 1px solid rgb(0, 238, 255);
+.widget-title > button {
+  color: rgb(0, 238, 255);
+  background: black;
+  border: 1px solid rgb(0, 238, 255);
 }
 
-.widget-title>button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+.widget-title > button:hover {
+  background: rgb(0, 238, 255);
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #fa8bff 90%
+  );
+  color: black;
 }
 
 /* DND widget */
 .widget-dnd {
-    color: rgb(0, 238, 255);
-    font-size: large;
+  color: rgb(0, 238, 255);
+  font-size: large;
 }
 
-.widget-dnd>switch {
-    color: rgb(0, 238, 255);
-    background: black;
-    border: 1px solid rgb(0, 238, 255);
+.widget-dnd > switch {
+  color: rgb(0, 238, 255);
+  background: black;
+  border: 1px solid rgb(0, 238, 255);
 }
 
-.widget-dnd>switch:checked {
-    background: black;
+.widget-dnd > switch:checked {
+  background: black;
 }
 
-.widget-dnd>switch slider {
-    background: rgb(0, 238, 255);
+.widget-dnd > switch slider {
+  background: rgb(0, 238, 255);
 }
 
 /* Inhibitors widget */
 .widget-inhibitors {
-    color: rgb(0, 238, 255);
-    font-size: large;
+  color: rgb(0, 238, 255);
+  font-size: large;
 }
-.widget-inhibitors>button {
-    color: rgb(0, 238, 255);
-    background: black;
-    border: 1px solid rgb(0, 238, 255);
+.widget-inhibitors > button {
+  color: rgb(0, 238, 255);
+  background: black;
+  border: 1px solid rgb(0, 238, 255);
 }
-.widget-inhibitors>button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+.widget-inhibitors > button:hover {
+  background: rgb(0, 238, 255);
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #fa8bff 90%
+  );
+  color: black;
 }
 
 /* Mpris widget */
@@ -188,79 +208,99 @@
 .widget-mpris-player,
 .widget-mpris-title,
 .widget-mpris-subtitle,
-.widget-mpris-player>box>button {
-    color: rgb(0, 238, 255);
+.widget-mpris-player > box > button {
+  color: rgb(0, 238, 255);
 }
 
-.widget-mpris-player>box>button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+.widget-mpris-player > box > button:hover {
+  background: rgb(0, 238, 255);
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #fa8bff 90%
+  );
+  color: black;
 }
 
 /* Volume and Brightness Widget*/
 .widget-volume {
-    background-color: black;
-    padding: 4px 8px 8px 8px;
-    margin: 0px 8px 8px 8px;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
+  background-color: black;
+  padding: 4px 8px 8px 8px;
+  margin: 0px 8px 8px 8px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .widget-backlight {
-    background-color: black;
-    padding: 8px 8px 4px 8px;
-    margin: 8px 8px 0px 8px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+  background-color: black;
+  padding: 8px 8px 4px 8px;
+  margin: 8px 8px 0px 8px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 .dotfiles-buttons,
 .power-buttons {
-    color: rgb(0, 238, 255);
-    background-color: transparent;
-    padding: 8px;
-    margin: 8px;
-    border-radius: 12px;
+  color: rgb(0, 238, 255);
+  background-color: transparent;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 12px;
 }
 
-.dotfiles-buttons>button,
-.power-buttons>button {
-    color: rgb(0, 238, 255);
-    background: transparent;
+.dotfiles-buttons > button,
+.power-buttons > button {
+  color: rgb(0, 238, 255);
+  background: transparent;
 }
 
-.dotfiles-buttons>button:hover,
-.power-buttons>button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+.dotfiles-buttons > button:hover,
+.power-buttons > button:hover {
+  background: rgb(0, 238, 255);
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #fa8bff 90%
+  );
+  color: black;
 }
 
 /* Menubar */
-.widget-menubar>box>.menu-button-bar>button {
-    color: rgb(0, 238, 255);
-    background: transparent;
+.widget-menubar > box > .menu-button-bar > button {
+  color: rgb(0, 238, 255);
+  background: transparent;
 }
 
-.widget-menubar>box>.menu-button-bar>button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+.widget-menubar > box > .menu-button-bar > button:hover {
+  background: rgb(0, 238, 255);
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #fa8bff 90%
+  );
+  color: black;
 }
 
 /** Buttons Grid **/
 .widget-buttons-grid {
-    background-color: transparent;
+  background-color: transparent;
 }
 
-.widget-buttons-grid>flowbox>flowboxchild>button {
-    color: rgb(0, 238, 255);
-    background: black;
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  color: rgb(0, 238, 255);
+  background: black;
 }
 
-.widget-buttons-grid>flowbox>flowboxchild>button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: rgb(0, 238, 255);
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #fa8bff 90%
+  );
+  color: black;
 }

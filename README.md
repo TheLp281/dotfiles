@@ -42,6 +42,7 @@ ln -s ~/.config/dotfiles/waybar ~/.config/waybar
 - - Add a wallpaper at ~/Pictures/Wallpapers.
 
 I personally prefer cloning wallpaper bank
+
 ```bash
 git clone --depth 1 https://github.com/JaKooLit/Wallpaper-Bank ~/Pictures/Wallpapers
 ```
@@ -110,6 +111,7 @@ yay -S hyprshot wlogout swww --noconfirm
   ```bash
   sed -i 's/^gtk-cursor-theme-name=.*/gtk-cursor-theme-name=hatsunemiku/' ~/.config/gtk-3.0/settings.ini
   ```
+
 ## For copyq theme
 
 - Open the CopyQ main window

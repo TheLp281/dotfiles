@@ -16,7 +16,7 @@
       "bluetooth",
       "network",
       "privacy",
-      "hyprland/submap"
+      "hyprland/submap",
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
@@ -30,7 +30,7 @@
       "memory",
       "idle_inhibitor",
       "systemd-failed-units",
-      "group/power"
+      "group/power",
     ],
 
     // Group Configuration
@@ -39,53 +39,53 @@
       "drawer": {
         "transition-duration": 500,
         "children-class": "drawer-child",
-        "transition-left-to-right": false
+        "transition-left-to-right": false,
       },
       "modules": [
         "custom/power", // First element is the "group leader" and won't ever be hidden
         "custom/quit",
         "custom/lock",
-        "custom/reboot"
-      ]
+        "custom/reboot",
+      ],
     },
     "custom/quit": {
       "format": "󰗼",
       "tooltip": false,
-      "on-click": "hyprctl dispatch exit"
+      "on-click": "hyprctl dispatch exit",
     },
     "custom/lock": {
       "format": "󰍁",
       "tooltip": false,
-      "on-click": "hyprlock"
+      "on-click": "hyprlock",
     },
     "custom/reboot": {
       "format": "󰜉",
       "tooltip": false,
-      "on-click": "reboot"
+      "on-click": "reboot",
     },
     "custom/power": {
       "format": "",
       "tooltip": false,
-      "on-click": "shutdown now"
+      "on-click": "shutdown now",
     },
     "group/cpu-load": {
       "orientation": "inherit",
       "drawer": {
         "transition-duration": 500,
         "children-class": "drawer-child",
-        "transition-left-to-right": false
+        "transition-left-to-right": false,
       },
-      "modules": ["cpu", "load"]
+      "modules": ["cpu", "load"],
     },
     "cpu": {
       "interval": 1,
       "format": "󰍛 {usage}%",
       "on-click": "",
-      "tooltip": false
+      "tooltip": false,
     },
     "load": {
       "interval": 10,
-      "format": "load: {load1} {load5} {load15}"
+      "format": "load: {load1} {load5} {load15}",
     },
     // Modules configuration
     "memory": {
@@ -93,7 +93,7 @@
       "format": " {}%",
       "format-alt": " {used}G",
       "tooltip": true,
-      "tooltip-format": "{used:0.1f}G/{total:0.1f}G"
+      "tooltip-format": "{used:0.1f}G/{total:0.1f}G",
     },
     "bluetooth": {
       "format": " {status}",
@@ -103,7 +103,7 @@
       "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
       "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
       "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     },
     "temperature": {
       // "thermal-zone": 2,
@@ -113,15 +113,15 @@
       "format": "{icon} {temperatureC}°C",
       "format-alt": "{temperatureF}°F {icon}",
       "format-icons": ["", "", ""],
-      "tooltip": false
+      "tooltip": false,
     },
     "hyprland/window": {
       "format": "{}",
       "max-length": 50,
       "rewrite": {
-        "(.*) — Mozilla Firefox": "🌎 $1"
+        "(.*) — Mozilla Firefox": "🌎 $1",
       },
-      "separate-outputs": true
+      "separate-outputs": true,
     },
     "keyboard-state": {
       "numlock": true,
@@ -129,8 +129,8 @@
       "format": "  {name} {icon}",
       "format-icons": {
         "locked": "",
-        "unlocked": ""
-      }
+        "unlocked": "",
+      },
     },
     "privacy": {
       "icon-spacing": 4,
@@ -140,19 +140,19 @@
         {
           "type": "screenshare",
           "tooltip": true,
-          "tooltip-icon-size": 14
+          "tooltip-icon-size": 14,
         },
         {
           "type": "audio-out",
           "tooltip": true,
-          "tooltip-icon-size": 14
+          "tooltip-icon-size": 14,
         },
         {
           "type": "audio-in",
           "tooltip": true,
-          "tooltip-icon-size": 14
-        }
-      ]
+          "tooltip-icon-size": 14,
+        },
+      ],
     },
     "network": {
       //"interface": "wlp2s0",
@@ -166,7 +166,7 @@
       "tooltip-format-ethernet": "{ipaddr}/{cidr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
       "tooltip-format-disconnected": "Disconnected ⚠",
       "max-length": 50,
-      "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "]
+      "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
     },
     "clock": {
       "format": "⏰{:%I:%M %p}",
@@ -186,23 +186,23 @@
           "days": "<span color='#ecc6d9'><b>{}</b></span>",
           "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
           "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-          "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-        }
+          "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+        },
       },
       "actions": {
         "on-click-right": "mode",
         "on-click-forward": "tz_up",
         "on-click-backward": "tz_down",
         "on-scroll-up": "shift_up",
-        "on-scroll-down": "shift_down"
-      }
+        "on-scroll-down": "shift_down",
+      },
     },
     "backlight": {
       "device": "intel_backlight",
       "format": "{icon} {percent}%",
       "format-icons": ["", "", "", "", "", "", "", "", ""],
       "on-scroll-up": "brightnessctl set 1%+",
-      "on-scroll-down": "brightnessctl set 1%-"
+      "on-scroll-down": "brightnessctl set 1%-",
     },
     "battery": {
       //"bat": "BAT2",
@@ -210,7 +210,7 @@
       "states": {
         "good": 95,
         "warning": 30,
-        "critical": 20
+        "critical": 20,
       },
       "format": "{icon} {capacity}%",
       "format-warning": "{icon} {capacity}%",
@@ -241,8 +241,8 @@
         "󰂀",
         "󰂁",
         "󰂂",
-        "󰁹"
-      ]
+        "󰁹",
+      ],
     },
     "wireplumber": {
       "format": "{icon} {volume}%",
@@ -259,18 +259,18 @@
         "phone": "󰏲 ",
         "portable": "󰏲 ",
         "car": " ",
-        "default": ["", " ", " "]
+        "default": ["", " ", " "],
       },
       "scroll-step": 0.2,
       "max-volume": 100,
       "on-click": "pavucontrol",
-      "on-click-right": "qpwgraph"
+      "on-click-right": "qpwgraph",
     },
     "jack": {
       "format": "DSP {}%",
       "format-xrun": "{xruns} xruns",
       "format-disconnected": "DSP off",
-      "realtime": true
+      "realtime": true,
     },
     "mpris": {
       "format": "{player_icon} {dynamic}",
@@ -281,15 +281,15 @@
         "cmus": "",
         "mpv": "🎵",
         "vlc": "🎬",
-        "spotify": " "
+        "spotify": " ",
       },
       "status-icons": {
-        "paused": "⏸"
+        "paused": "⏸",
       },
       "on-click": "playerctl play-pause",
       "on-click-right": "playerctl stop",
       "smooth-scrolling-threshold": 10,
-      "on-scroll-down": "playerctl previous"
+      "on-scroll-down": "playerctl previous",
       // "ignored-players": ["cmus", "spotify"]
     },
     "mpd": {
@@ -298,37 +298,37 @@
       "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
       "interval": 10,
       "consume-icons": {
-        "on": " " // Icon shows only when "consume" is on
+        "on": " ", // Icon shows only when "consume" is on
       },
       "random-icons": {
         "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
-        "on": " "
+        "on": " ",
       },
       "repeat-icons": {
-        "on": " "
+        "on": " ",
       },
       "single-icons": {
-        "on": "1 "
+        "on": "1 ",
       },
       "state-icons": {
         "paused": "",
-        "playing": ""
+        "playing": "",
       },
       "tooltip-format": "MPD (connected)",
-      "tooltip-format-disconnected": "MPD (disconnected)"
+      "tooltip-format-disconnected": "MPD (disconnected)",
     },
     "idle_inhibitor": {
       "format": "{icon}",
       "format-icons": {
         "activated": " ",
-        "deactivated": " "
-      }
+        "deactivated": " ",
+      },
     },
     "systemd-failed-units": {
       "format": "✗ {nr_failed}",
       "format-ok": "✓",
       "system": true, // Monitor failed systemwide units.
-      "user": false // Ignore failed user units.
+      "user": false, // Ignore failed user units.
     },
 
     // Custom
@@ -337,11 +337,11 @@
       "return-type": "json",
       "format-icons": {
         "has-updates": " ", //"
-        "updated": ""
+        "updated": "",
       },
       "exec-if": "which waybar-module-pacman-updates",
-      "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
-    }
+      "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300",
+    },
   },
   {
     "name": "bottombar",
@@ -360,7 +360,7 @@
     "hyprland/submap": {
       "format": "✌️ {}",
       "max-length": 8,
-      "tooltip": false
+      "tooltip": false,
     },
     "hyprland/workspaces": {
       "on-click": "activate",
@@ -406,7 +406,7 @@
         "class<android-studio>": "",
         "class<steam>": "🎮",
         "class<figma-linux>": "",
-        "class<tor browser>": ""
+        "class<tor browser>": "",
       },
       // "persistent-workspaces": {
       //     "*": [10] // 1 workspaces by default on every monitor
@@ -427,9 +427,9 @@
         // "10": "10",
         "special": "🎁",
         // "urgent": "",
-        "persistent": ""
+        "persistent": "",
         // "default": " ",
-      }
+      },
     },
     "wlr/taskbar": {
       // "format": "{icon}",
@@ -441,15 +441,15 @@
       "on-click-middle": "close",
       // "ignore-list": ["Alacritty"],
       "app_ids-mapping": {
-        "firefoxdeveloperedition": "firefox-developer-edition"
+        "firefoxdeveloperedition": "firefox-developer-edition",
       },
       "rewrite": {
-        "Firefox Web Browser": "Firefox"
-      }
+        "Firefox Web Browser": "Firefox",
+      },
     },
     "tray": {
       "icon-size": 18,
-      "spacing": 10
+      "spacing": 10,
     },
     "custom/notification": {
       "tooltip": false,
@@ -462,14 +462,14 @@
         "inhibited-notification": "<span foreground='red'><sup></sup></span>",
         "inhibited-none": "",
         "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-        "dnd-inhibited-none": ""
+        "dnd-inhibited-none": "",
       },
       "return-type": "json",
       "exec-if": "which swaync-client",
       "exec": "swaync-client -swb",
       "on-click": "swaync-client -t -sw",
       "on-click-right": "swaync-client -d -sw",
-      "escape": true
-    }
-  }
+      "escape": true,
+    },
+  },
 ]
