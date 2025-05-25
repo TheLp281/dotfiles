@@ -32,7 +32,6 @@
       "group/power"
     ],
 
-    // Group Configuration
     "group/power": {
       "orientation": "inherit",
       "drawer": {
@@ -41,7 +40,7 @@
         "transition-left-to-right": false
       },
       "modules": [
-        "custom/power", // First element is the "group leader" and won't ever be hidden
+        "custom/power",
         "custom/quit",
         "custom/lock",
         "custom/reboot"
@@ -86,7 +85,6 @@
       "interval": 10,
       "format": "load: {load1} {load5} {load15}"
     },
-    // Modules configuration
     "memory": {
       "interval": 30,
       "format": " {}%",
@@ -95,10 +93,10 @@
       "tooltip-format": "{used:0.1f}G/{total:0.1f}G"
     },
     "temperature": {
-      // "thermal-zone": 2,
-      // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+      "thermal-zone": 2,
+      "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
       "critical-threshold": 80,
-      // "format-critical": "{temperatureC}°C {icon}",
+      "format-critical": "{temperatureC}°C {icon}",
       "format": "{icon} {temperatureC}°C",
       "format-alt": "{temperatureF}°F {icon}",
       "format-icons": ["", "", ""],
@@ -144,7 +142,6 @@
       ]
     },
     "network": {
-      //"interface": "wlp2s0",
       "format": "{ifname} [󰾆 {bandwidthTotalBytes}]",
       "format-wifi": "{icon} {essid} [󰾆 {bandwidthTotalBytes}]",
       "format-ethernet": "󱘖  {ifname} [󰾆 {bandwidthTotalBytes}]",
@@ -160,9 +157,6 @@
     "clock": {
       "format": "⏰{:%I:%M %p}",
       "format-alt": "📅{:%A, %B %d, %Y (%I:%M %p)}",
-      //"format": "<span color='#bf616a'> </span>{:%I:%M %p}",
-      //"format-alt": "<span color='#bf616a'> </span>{:%A, %B %d, %Y (%I:%M %p)}",
-      // "format": "{: %R   %d/%m}",
       "tooltip-format": "<tt><small>{calendar}</small></tt>",
       "calendar": {
         "mode": "year",
@@ -200,7 +194,6 @@
       "format-bluetooth-muted": "󰂲 Mute",
       "format-source": "󰍬{volume}",
       "format-source-muted": "󰍭 ",
-      // "format-icons": ["", " ", " "],
       "format-icons": {
         "headphone": "󰋎 ",
         "hands-free": "",
@@ -239,7 +232,6 @@
       "on-click-right": "playerctl stop",
       "smooth-scrolling-threshold": 10,
       "on-scroll-down": "playerctl previous"
-      // "ignored-players": ["cmus", "spotify"]
     },
     "mpd": {
       "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
@@ -247,10 +239,10 @@
       "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
       "interval": 10,
       "consume-icons": {
-        "on": " " // Icon shows only when "consume" is on
+        "on": " "
       },
       "random-icons": {
-        "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+        "off": "<span color=\"#f53c3c\"></span> ",
         "on": " "
       },
       "repeat-icons": {
@@ -276,9 +268,9 @@
     "systemd-failed-units": {
       "format": "✗ {nr_failed}",
       "format-ok": "✓",
-      "system": true, // Monitor failed systemwide units.
-      "user": false // Ignore failed user units.
-    },
+      "system": true,
+      "user": false
+    }
   },
   {
     "name": "bottombar",
@@ -319,15 +311,12 @@
         "vim": "",
         "cmus": "",
         "spotify": "",
-        // "brave": "",
         "brave": "🦁",
         "class<discord>": "",
         "class<slack>": "",
         "class<vlc>": "󰕼",
-        // "class<vlc>": "🎬󰕼",
         "class<libreoffice-writer>": "📝",
         "class<libreoffice-calc>": "📊",
-        // "class<gimp>": " 🎨",
         "class<gimp>": "",
         "class<thunderbird>": "",
         "title<.*gmail.*>": "󰊫",
@@ -345,38 +334,21 @@
         "class<figma-linux>": "",
         "class<tor browser>": ""
       },
-      // "persistent-workspaces": {
-      //     "*": [10] // 1 workspaces by default on every monitor
-      //     // "HDMI-A-1": 3 // but only three on HDMI-A-1
-      // },
+
       "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null",
       "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
       "format-icons": {
-        // "1": "1",
-        // "2": "2",
-        // "3": "3",
-        // "4": "4",
-        // "5": "5",
-        // "6": "6",
-        // "7": "7",
-        // "8": "8",
-        // "9": "9",
-        // "10": "10",
         "special": "🎁",
-        // "urgent": "",
         "persistent": ""
-        // "default": " ",
       }
     },
     "wlr/taskbar": {
-      // "format": "{icon}",
       "format": "{icon} {title:.17}",
       "icon-size": 18,
       "icon-theme": "BeautyLine",
       "tooltip-format": "{title}",
       "on-click": "activate",
       "on-click-middle": "close",
-      // "ignore-list": ["Alacritty"],
       "app_ids-mapping": {
         "firefoxdeveloperedition": "firefox-developer-edition"
       },

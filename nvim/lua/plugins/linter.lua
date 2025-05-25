@@ -6,7 +6,7 @@ return {
       ["markdownlint-cli2"] = {
         args = {
           "--config",
-          "/home/sujan/dotfiles/.config/nvim/lua/utils/.markdownlint-cli2.yaml",
+          "/home/arch/.config/dotfiles/nvim/lua/utils/.markdownlint-cli2.yaml",
           "--"
         }
       }
