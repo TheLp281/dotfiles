@@ -6,7 +6,11 @@ if [ ! -f "$STATE_FILE" ]; then
 fi
 
 LAST_INDEX=$(cat "$STATE_FILE")
-IMAGES=($DIR/*.png)
+
+shopt -s nullglob
+IMAGES=($DIR/*.{png,jpg,jpeg,gif,webp,bmp,tiff,svg})
+shopt -u nullglob
+
 TOTAL_IMAGES=${#IMAGES[@]}
 
 if [ $TOTAL_IMAGES -eq 0 ]; then
@@ -18,3 +22,4 @@ SELECTED_IMAGE="${IMAGES[$INDEX]}"
 echo $INDEX >"$STATE_FILE"
 
 swww img "$SELECTED_IMAGE" --transition-duration 1 --transition-fps 60 --transition-type random
+
