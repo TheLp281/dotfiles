@@ -2,13 +2,14 @@
 
 
 declare -A menu_options=(
-  ["Lofi Girl ☕️🎶"]="https://play.streamafrica.net/lofiradio"
-  ["Easy Rock 96.3 FM 📻🎶"]="https://radio-stations-philippines.com/easy-rock"
-  ["Wish 107.5 FM 📻🎶"]="https://radio-stations-philippines.com/dwnu-1075-wish"
-  ["Chillhop ☕️🎶"]="http://stream.zeno.fm/fyn8eh3h5f8uv"
-  ["SmoothChill ☕️🎶"]="https://media-ssl.musicradio.com/SmoothChill"
-  ["YouTube Chill Radio 📺🎶"]="https://www.youtube.com/watch?v=leVjYZWXvFs&list=RDleVjYZWXvFs&start_radio=1"
+  ["Lofi Girl ☕🎶"]="https://play.streamafrica.net/lofiradio"
+  ["Nier Chill Radio 🎮🎶"]="https://www.youtube.com/watch?v=leVjYZWXvFs&list=RDleVjYZWXvFs&start_radio=1"
+  ["Last Summer Whisper 🌅📺"]="https://www.youtube.com/watch?v=SNq4zqTN_DQ&list=RDSNq4zqTN_DQ&start_radio=1"
+  ["Fly Me to the Moon 🌕🎙️"]="https://www.youtube.com/watch?v=w2xi6Qjv8mw&list=RDSNq4zqTN_DQ&index=3"
+  ["Plants Vs Zombies Jazz 🧟🎷"]="https://www.youtube.com/watch?v=L7-c-LbNq9I&list=RDL7-c-LbNq9I&start_radio=1&pp=oAcB"
+  ["Hatsune Miku"]="https://www.youtube.com/watch?v=lLNjr_nzFZc&t=268s"
 )
+
 
 notification() {
   notify-send -u normal "🎵 Now Playing:" "$@"
