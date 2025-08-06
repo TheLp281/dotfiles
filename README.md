@@ -69,6 +69,7 @@ git clone --depth 1 https://github.com/JaKooLit/Wallpaper-Bank ~/Pictures/Wallpa
 - neovim (AUR)
 - hyprshot (AUR)
 - wlogout (AUR)
+- ttf-firacode-nerd (AUR)
 
 ### Install Required Packages
 
@@ -77,11 +78,16 @@ sudo pacman -S --needed --noconfirm hyprland hyprpicker hyprlock hypridle kitty 
 ```
 
 ```bash
-yay -S hyprshot wlogout swww --noconfirm
+yay -S hyprshot wlogout swww ttf-firacode-nerd --noconfirm
 ```
 
 # Optional Packages
-
+## For start menu on Super + A
+  Setup https://github.com/adi1090x/rofi
+  ```bash
+  git clone https://github.com/adi1090x/rofi
+  bash setup.sh
+  ```
 ## For fish
 
     sudo pacman -S --needed --noconfirm fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper thefuck starship
