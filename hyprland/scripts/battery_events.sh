@@ -24,12 +24,14 @@ check_battery() {
       if [[ $notified -ne 1 ]] || (( now - last_notify_time >= 20 )); then
         notify-send -u critical "Battery Alert" "Battery is critically low! ($battery_pct%)"
         zenity --warning --text="Battery is critically low! ($battery_pct%)" --title="Battery Alert"
+        hyprctl notify 65535 5000 1 "Battery critically low! ($battery_pct%)"  # red color, 5s duration, icon 1
         notified=1
         last_notify_time=$now
       fi
     elif (( battery_pct <= 20 )); then
       if [[ $notified -ne 2 ]] || (( now - last_notify_time >= 20 )); then
         notify-send -u normal "Battery Warning" "Battery is low! ($battery_pct%)"
+        hyprctl notify 16776960 5000 2 "Battery low! ($battery_pct%)"  # yellow color, 5s duration, icon 2
         notified=2
         last_notify_time=$now
       fi
