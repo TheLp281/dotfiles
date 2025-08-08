@@ -93,8 +93,8 @@ yay -S hyprshot wlogout swww ttf-firacode-nerd --noconfirm
   Create a symbolic link to battery events service
   ```bash
   mkdir -p ~/.config/systemd/user
-  ln -s ~/.config/dotfiles/systemd/user/battery-events.service ~/.config/systemd/user/battery-events.service
-  systemctl --user enable --now battery-events.service
+  ln -s ~/.config/dotfiles/systemd/user/battery_events.service ~/.config/systemd/user/battery_events.service
+  systemctl --user enable --now battery_events.service
   ```
 
 ## For fish
