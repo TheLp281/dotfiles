@@ -65,6 +65,7 @@ git clone --depth 1 https://github.com/JaKooLit/Wallpaper-Bank ~/Pictures/Wallpa
 - polkit-gnome
 - mpd-mpris
 - polkit-kde-agent
+- zenity
 - swww (AUR)
 - neovim (AUR)
 - hyprshot (AUR)
@@ -74,7 +75,7 @@ git clone --depth 1 https://github.com/JaKooLit/Wallpaper-Bank ~/Pictures/Wallpa
 ### Install Required Packages
 
 ```bash
-sudo pacman -S --needed --noconfirm hyprland hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar noto-fonts-emoji fastfetch imagemagick mpv copyq polkit-gnome pavucontrol polkit-kde-agent
+sudo pacman -S --needed --noconfirm hyprland hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar noto-fonts-emoji fastfetch imagemagick mpv copyq polkit-gnome pavucontrol polkit-kde-agent zenity
 ```
 
 ```bash
@@ -88,6 +89,14 @@ yay -S hyprshot wlogout swww ttf-firacode-nerd --noconfirm
   git clone https://github.com/adi1090x/rofi
   bash setup.sh
   ```
+## For battery events notify service
+  Create a symbolic link to battery events service
+  ```bash
+  mkdir -p ~/.config/systemd/user
+  ln -s ~/.config/dotfiles/systemd/user/battery-events.service ~/.config/systemd/user/battery-events.service
+  systemctl --user enable --now battery-events.service
+  ```
+
 ## For fish
 
     sudo pacman -S --needed --noconfirm fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper thefuck starship
