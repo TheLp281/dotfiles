@@ -4,6 +4,7 @@ upower_path=$(upower -e | grep battery)
 notified=0
 prev_state=""
 last_notify_time=0
+interval=30 
 
 check_battery() {
   battery_pct=$(upower -i $upower_path | grep percentage | awk '{print int($2)}')
@@ -24,14 +25,14 @@ check_battery() {
       if [[ $notified -ne 1 ]] || (( now - last_notify_time >= 20 )); then
         notify-send -u critical "Battery Alert" "Battery is critically low! ($battery_pct%)"
         zenity --warning --text="Battery is critically low! ($battery_pct%)" --title="Battery Alert"
-        hyprctl notify 65535 5000 1 "Battery critically low! ($battery_pct%)"  # red color, 5s duration, icon 1
+        hyprctl notify 65535 5000 1 "Battery critically low! ($battery_pct%)"
         notified=1
         last_notify_time=$now
       fi
     elif (( battery_pct <= 20 )); then
       if [[ $notified -ne 2 ]] || (( now - last_notify_time >= 20 )); then
         notify-send -u normal "Battery Warning" "Battery is low! ($battery_pct%)"
-        hyprctl notify 16776960 5000 2 "Battery low! ($battery_pct%)"  # yellow color, 5s duration, icon 2
+        hyprctl notify 16776960 5000 2 "Battery low! ($battery_pct%)"  
         notified=2
         last_notify_time=$now
       fi
@@ -49,11 +50,7 @@ check_battery() {
   fi
 }
 
-check_battery
-
-dbus-monitor --system "type='signal',interface='org.freedesktop.DBus.Properties',path='$upower_path'" | \
-while read -r line; do
-  if [[ "$line" == *"PropertiesChanged"* ]]; then
-    check_battery
-  fi
+while true; do
+  check_battery
+  sleep $interval
 done
