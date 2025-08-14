@@ -2,8 +2,10 @@
 Description=Battery warning event listener service
 After=graphical.target
 
+
 [Service]
-ExecStart=/bin/bash -c '$HOME/.config/dotfiles/hyprland/scripts/battery_events.sh'
+Type=simple
+ExecStart=/bin/bash %h/.config/dotfiles/hyprland/scripts/battery_events.sh
 Restart=always
 Environment=DISPLAY=:0
 Environment=WAYLAND_DISPLAY=wayland-0

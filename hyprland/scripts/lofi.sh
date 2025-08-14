@@ -1,33 +1,57 @@
 #!/bin/bash
 
-
 declare -A menu_options=(
   ["Lofi Girl ☕🎶"]="https://play.streamafrica.net/lofiradio"
-  ["Nier Chill Radio 🎮🎶"]="https://www.youtube.com/watch?v=leVjYZWXvFs&list=RDleVjYZWXvFs&start_radio=1"
+  ["Nier Radio 🎮🎶"]="category:nier_songs"
   ["Last Summer Whisper 🌅📺"]="https://www.youtube.com/watch?v=SNq4zqTN_DQ&list=RDSNq4zqTN_DQ&start_radio=1"
   ["Fly Me to the Moon 🌕🎙️"]="https://www.youtube.com/watch?v=w2xi6Qjv8mw&list=RDSNq4zqTN_DQ&index=3"
-  ["Plants Vs Zombies Jazz 🧟🎷"]="https://www.youtube.com/watch?v=L7-c-LbNq9I&list=RDL7-c-LbNq9I&start_radio=1&pp=oAcB"
-  ["Hatsune Miku"]="https://www.youtube.com/watch?v=lLNjr_nzFZc&t=268s"
+  ["Hatsune Miku 🎤"]="category:hatsune_miku_songs"
 )
 
+declare -A hatsune_miku_songs=(
+  ["World is Mine"]="https://www.youtube.com/watch?v=EuJ6UR_pD5s"
+  ["Gasolina"]="https://www.youtube.com/watch?v=V-IpEogkdaM"
+  ["Aishite"]="https://www.youtube.com/watch?v=Ypl1JbdSvJs"
+)
+
+declare -A nier_songs=(
+  ["Ashes of Dreams"]="https://www.youtube.com/watch?v=UgSHUZvs8jg"
+  ["Grandma"]="https://www.youtube.com/watch?v=f03IHCr9dJY"
+  ["Voice of no Return"]="https://www.youtube.com/watch?v=ABvi5qegodY"
+  ["Weight of the World"]="https://www.youtube.com/watch?v=Dsk3DTdTY3Y"
+)
 
 notification() {
   notify-send -u normal "🎵 Now Playing:" "$@"
 }
 
+select_option() {
+  local -n options=$1
+  local prompt="$2"
+  printf "%s\n" "${!options[@]}" | rofi -i -dmenu -config ~/.config/dotfiles/rofi/config.rasi -p "$prompt"
+}
+
 main() {
-  choice=$(printf "%s\n" "${!menu_options[@]}" | rofi -i -dmenu -config ~/.config/dotfiles/rofi/config.rasi -p "▶ Select a stream:")
+  local choice=$(select_option menu_options "▶ Select a stream or category:")
+  [ -z "$choice" ] && exit 1
 
-  if [ -z "$choice" ]; then
-    exit 1
+  local target="${menu_options[$choice]}"
+
+  if [[ "$target" == category:* ]]; then
+    local category_name="${target#category:}"
+
+    local -n category_array="$category_name"
+
+    local subchoice=$(select_option category_array "▶ Select a $choice song:")
+    [ -z "$subchoice" ] && exit 1
+
+    local link="${category_array[$subchoice]}"
+    notification "$subchoice"
+    mpv --no-video --ytdl-format=bestaudio --volume=100 "$link"
+  else
+    notification "$choice"
+    mpv --no-video --ytdl-format=bestaudio --volume=100 "$target"
   fi
-
-  link="${menu_options[$choice]}"
-
-  notification "$choice"
-
-  mpv --no-video --ytdl-format=bestaudio --volume=100 "$link"
 }
 
 pkill mpv && notify-send -u low "⏹ Online Music Stopped" || main
-
