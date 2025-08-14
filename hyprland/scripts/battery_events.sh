@@ -4,7 +4,7 @@ upower_path=$(upower -e | grep battery)
 notified=0
 prev_state=""
 last_notify_time=0
-interval=30 
+interval=10
 
 check_battery() {
   battery_pct=$(upower -i $upower_path | grep percentage | awk '{print int($2)}')

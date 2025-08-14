@@ -24,7 +24,7 @@
 - On fresh Hyprland, install all required packages and clone this repository at `~/.config`
 
   ```bash
-  git clone --depth 1 https://github.com/TheLp281/dotfiles ~/.config
+  git clone --depth 1 https://github.com/TheLp281/dotfiles ~/.config/dotfiles
   ```
 
 - Add `source = ~/.config/dotfiles/hyprland/hyprland.conf` to `~/.config/hypr/hyprland.conf` and remove everything else
@@ -39,7 +39,7 @@
 ln -s ~/.config/dotfiles/waybar ~/.config/waybar
 ```
 
-- - Add a wallpaper at ~/Pictures/Wallpapers.
+- Add a wallpaper at ~/Pictures/Wallpapers.  
 
 I personally prefer cloning wallpaper bank
 
@@ -66,6 +66,7 @@ git clone --depth 1 https://github.com/JaKooLit/Wallpaper-Bank ~/Pictures/Wallpa
 - mpd-mpris
 - polkit-kde-agent
 - zenity
+- wireplumber
 - swww (AUR)
 - neovim (AUR)
 - hyprshot (AUR)
@@ -75,19 +76,18 @@ git clone --depth 1 https://github.com/JaKooLit/Wallpaper-Bank ~/Pictures/Wallpa
 ### Install Required Packages
 
 ```bash
-sudo pacman -S --needed --noconfirm hyprland hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar noto-fonts-emoji fastfetch imagemagick mpv copyq polkit-gnome pavucontrol polkit-kde-agent zenity
+sudo pacman -S --needed --noconfirm hyprland hyprpicker hyprlock hypridle kitty rofi-wayland swaync waybar noto-fonts-emoji fastfetch imagemagick mpv copyq polkit-gnome pavucontrol polkit-kde-agent zenity wireplumber
 ```
 
 ```bash
 yay -S hyprshot wlogout swww ttf-firacode-nerd --noconfirm
 ```
 
-# Optional Packages
+# Optional Packages Setup
 ## For start menu on Super + A
   Setup https://github.com/adi1090x/rofi
   ```bash
-  git clone https://github.com/adi1090x/rofi
-  bash setup.sh
+  git clone https://github.com/adi1090x/rofi /tmp/rofi && cd /tmp/rofi && bash setup.sh && cd ~ && rm -rf /tmp/rofi
   ```
 ## For battery events notify service
   Create a symbolic link to battery events service
@@ -97,11 +97,6 @@ yay -S hyprshot wlogout swww ttf-firacode-nerd --noconfirm
   systemctl --user enable --now battery_events.service
   ```
 
-## For fish
-
-    sudo pacman -S --needed --noconfirm fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper thefuck starship
-    yay -S cpuid moc pokemon-colorscripts
-    sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
 
 ## For neovim
 
@@ -151,15 +146,28 @@ gsettings set org.gnome.desktop.interface icon-theme 'candy-icon'
 ## For notification center
 
 - Create a symbolic link of swaync config
+
+```bash
 - ln -s ~/.config/dotfiles/swaync ~/.config/swaync
+```
+
 
 ## For fish shell
 
-- Create a symbolic link of fish config
+- Install fish packages
+```bash
+  sudo pacman -S --needed --noconfirm fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper thefuck starship
+  yay -S cpuid moc pokemon-colorscripts
+  sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
+```
 
+
+- Create a symbolic link of fish config
 ```bash
 ln -s ~/.config/dotfiles/fish ~/.config/fish
 ```
+
+
 
 > ### Other programs like browsers and players are listed in `hyprland/defaultPrograms.conf`
 >
