@@ -1,78 +1,93 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    -- bootstrap lazy.nvim
-    -- stylua: ignore
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
-        lazypath
-    })
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "--branch=stable",
+    lazyrepo,
+    lazypath
+  })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      {
+        "Failed to clone lazy.nvim:\n",
+        "ErrorMsg"
+      },
+      {
+        out,
+        "WarningMsg"
+      },
+      {
+        "\nPress any key to exit..."
+      }
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
-
-vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
+vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = {
-        -- add LazyVim and import its plugins
-        {
-            "LazyVim/LazyVim",
-            import = "lazyvim.plugins"
-        },
-        {
-            import = "plugins"
-        }
+  spec = {
+    -- add LazyVim and import its plugins
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins"
     },
-    defaults = {
-        lazy = false,
-        version = false
+    {
+      import = "plugins"
     },
-    change_detection = {
-        notify = false
+    {
+      import = "lazyvim.plugins.extras.vscode"
     },
-    install = {
-        missing = true,
-        colorscheme = {
-            "tokyonight"
-        }
-    },
-    checker = {
-        enabled = true
-    },
-    performance = {
-        cache = {
-            enabled = true
-        },
-        rtp = {
-            disabled_plugins = {
-                "tohtml",
-                "tutor",
-                "2html_plugin",
-                "getscript",
-                "getscriptPlugin",
-                "gzip",
-                "logipat",
-                "netrw",
-                "netrwPlugin",
-                "netrwSettings",
-                "netrwFileHandlers",
-                "matchit",
-                "matchparen",
-                "tar",
-                "tarPlugin",
-                "shada_plugin",
-                "tutor_mode_plugin",
-                "remote_plugins",
-                "rrhelper",
-                "spellfile_plugin",
-                "vimball",
-                "vimballPlugin",
-                "zip",
-                "zipPlugin"
-            }
-        }
+    {
+      "mfussenegger/nvim-dap",
+      config = function() end
     }
-    -- debug = true,
+  },
+  defaults = {
+    lazy = false,
+    version = false
+  },
+  change_detection = {
+    notify = false
+  },
+  install = {
+    missing = true,
+    colorscheme = {
+      "tokyonight"
+    }
+  },
+  checker = {
+    enabled = true
+  },
+  performance = {
+    cache = {
+      enabled = true
+    },
+    rtp = {
+      disabled_plugins = {
+        "tohtml",
+        "tutor",
+        "2html_plugin",
+        "getscript",
+        "getscriptPlugin",
+        "gzip",
+        "logipat",
+        "tar",
+        "tarPlugin",
+        "shada_plugin",
+        "tutor_mode_plugin",
+        "rrhelper",
+        "spellfile_plugin",
+        "vimball",
+        "vimballPlugin",
+        "zip",
+        "zipPlugin"
+      }
+    }
+  }
+  -- debug = true,
 })

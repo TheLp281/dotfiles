@@ -8,17 +8,13 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Paste
--- map("x", "p", '"_c<Esc>p', {
---     desc = "paste without yanking"
--- })
-
-map("n", "<A-v>", "m`o<ESC>p``", {
+map("n", "]p", "m`o<ESC>p``", {
   desc = "Paste below"
 })
-map("n", "<A-p>", "m`O<ESC>p``", {
+map("n", "[p", "m`O<ESC>p``", {
   desc = "Paste above"
 })
-map("i", "<C-v>", '<ESC>"+p<ESC>a', {
+map("i", "<C-v>", '<C-O>"+p', {
   desc = "Paste from clipboard"
 })
 map({
@@ -27,12 +23,14 @@ map({
 }, "<C-c>", '"+y<ESC>', {
   desc = "Copy to clipboard"
 })
--- map({
---     "n",
---     "x"
--- }, "<C-v>", '"+p<ESC>', {
---     desc = "Paste from clipboard"
--- })
+
+map({
+  "n",
+  "x"
+}, "<A-v>", '"+p<ESC>', {
+  desc = "Paste from clipboard"
+})
+
 map({
   "n",
   "x"
@@ -40,155 +38,56 @@ map({
   desc = "Cut to clipboard"
 })
 
--- Paste over currently selected text without yanking it
--- map("v", "p", '"_dp', {
---     desc = "Paste over currently selected text without yanking it"
--- })
-map("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', {
-  desc = "Paste over currently selected text without yanking it"
-})
-
--- Reselect the text that has just been pasted, see also https://stackoverflow.com/a/4317090/6064933.
-map("n", "<A-v>", "printf('`[%s`]', getregtype()[0])", {
-  expr = true,
-  desc = "reselect last pasted area"
-})
-
--- save file
-map({
-  "i",
-  "v",
-  "n",
-  "s"
-}, "<A-s>", "<cmd>wa<cr><esc>", {
-  desc = "Save all file"
-})
-map({
-  "i",
-  "v",
-  "n",
-  "s"
-}, "<C-q>", "<cmd>wq!<cr><esc>", {
-  desc = "Force Save file and quit"
-})
-map({
-  "i",
-  "v",
-  "n",
-  "s"
-}, "<C-x>", "<cmd>x<cr>", {
-  desc = "quit current window"
-})
-
--- ctrl a to selected all text in file
--- map({
---     "n",
---     "i",
---     "v"
--- }, "<C-a>", "<esc>ggVG")
---
--- Select all text in the current buffer
-map('i', '<C-a>', '<esc><cmd>keepjumps normal! ggVG<cr>', {
-  desc = "Select all"
-})
-map('i', '<A-a>', '<esc><cmd>keepjumps normal! ggyG<cr>', {
-  desc = "Copy all"
-})
-
--- quit
-map("n", "<A-q>", "<cmd>wqa!<cr>", {
-  desc = "Quit all"
-})
-
--- go to beginning and end in insert mode
-map("i", "<A-b>", "<ESC>^i", {
-  desc = "Go to beginning of line"
-})
-map("i", "<A-e>", "<End>", {
-  desc = "Go to end of line"
-})
-
--- Go to the beginning and end of current line in insert mode quickly
-map("i", "<A-h>", "<HOME>")
-map("i", "<A-l>", "<END>")
-
--- Go to beginning of command in command-line mode
-map("c", "<C-A>", "<HOME>")
-
--- insert semicolon in the end
-map("i", "<A-;>", "<Esc>miA;<Esc>`ii", {
-  desc = "insert semicolon in the end"
-})
-
--- Alt/Meta + c to invert the caseu
-map('n', '<A-c>', 'guiw~iw')
--- Turn the word under cursor to upper case
-map("i", "<c-u>", "<Esc>viwUea")
--- Turn the current word into title case
-map("i", "<c-t>", "<Esc>b~lea")
-
--- Undo
-map("i", "<C-z>", "<C-O>u")
-
--- navigate within insert mode
-map("i", "<C-h>", "<Left>", {
-  desc = "Move Left"
-})
-map("i", "<C-l>", "<Right>", {
-  desc = "Move Right"
-})
-map("i", "<C-j>", "<Down>", {
-  desc = "Move Down"
-})
-map("i", "<C-k>", "<Up>", {
-  desc = "Move Up"
-})
-
--- Insert empty line without entering insert mode
-map('n', '[o', ':<C-u>call append(line("."), repeat([""], v:count1))<CR>', {
-  desc = "Insert empty line below"
-})
-map('n', ']o', ':<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>', {
-  desc = "Insert empty line above"
-})
-
--- Insert empty line in insert mode
-map("i", "<A-o>", "<C-O>o", {
-  desc = "Insert empty line below"
-})
-map("i", "<A-O>", "<C-O>O", {
-  desc = "Insert empty line above"
-})
-
--- Insert blank line
--- keymap("n", "]<Space>", "o<Esc>")
--- keymap("n", "[<Space>", "O<Esc>")
-
 -- Copy whole buffer
 map("n", "<C-y>", "<cmd>%y+<CR>", {
   desc = "Copy whole buffer"
 })
 
--- Go to start or end of line easier
-map({
-  "n",
-  "x"
-}, "H", "^", {
-  desc = "Go to beginning of line"
-})
-map({
-  "n",
-  "x"
-}, "L", "g_", {
-  desc = "Go to end of line"
+-- Yank buffer's relative path to clipboard
+map("n", "<leader>y", function()
+  local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":~:.") or ""
+  vim.fn.setreg("+", path)
+  vim.notify(path, vim.log.levels.INFO, {
+    title = "Yanked relative path"
+  })
+end, {
+  silent = true,
+  desc = "Yank relative path"
 })
 
--- map("n", "H", "_", {
---     desc = "Go to beginning of line"
--- })
--- map("n", "L", "$", {
---     desc = "Go to end of line"
--- })
+-- Yank absolute path
+map("n", "<leader>Y", function()
+  local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":p") or ""
+  vim.fn.setreg("+", path)
+  vim.notify(path, vim.log.levels.INFO, {
+    title = "Yanked absolute path"
+  })
+end, {
+  silent = true,
+  desc = "Yank absolute path"
+})
+
+-- Duplicate lines without affecting PRIMARY and CLIPBOARD selections.
+map("n", "<Leader>yp", 'm`""Y""P``', {
+  desc = "Duplicate line"
+})
+map("x", "<Leader>yp", '""Y""Pgv', {
+  desc = "Duplicate selection"
+})
+map("i", "<A-d>", '<C-O>m`<C-O>""Y""P``', {
+  desc = "Duplicate line in insert mode"
+})
+
+-- Duplicate a line and comment out the first line
+map("n", "<leader>yc", "yygccp", {
+  remap = true,
+  desc = "Duplicate line and comment out the first line"
+})
+
+-- Change word in insert mode
+map("i", "<C-w>", "<C-O>ciw", {
+  desc = "Change word in insert mode"
+})
 
 -- Change text without putting it into the vim register,
 map({
@@ -216,6 +115,110 @@ map({
   desc = "delete without yanking"
 })
 
+-- Paste over currently selected text without yanking it
+-- map("v", "p", '"_dp', {
+--     desc = "Paste over currently selected text without yanking it"
+-- })
+map("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', {
+  silent = true,
+  desc = "Paste"
+})
+map("x", "P", 'P:let @+=@0<CR>:let @"=@0<CR>', {
+  silent = true,
+  desc = "Paste In-place"
+})
+
+-- map("x", "p", '"_c<Esc>p', {
+--     desc = "paste without yanking"
+-- })
+
+-- ctrl a to selected all text in file
+-- map({
+--     "n",
+--     "i",
+--     "v"
+-- }, "<C-a>", "<esc>ggVG")
+--
+-- Select all text in the current buffer
+map("i", "<C-a>", "<esc><cmd>keepjumps normal! ggVG<cr>", {
+  desc = "Select all"
+})
+
+-- Comment (doesn't work right now)
+-- map("i", "<C-/", "<C-O>gcc", {
+--   remap = true,
+--   desc = "Comment line",
+-- })
+
+-- Go to the beginning and end of current line in insert mode quickly
+map("i", "<A-h>", "<C-O>I")
+map("i", "<A-l>", "<END>")
+
+-- Easier line-wise movement
+map("n", "gh", "g^", {
+  desc = "Jump to first screen character"
+})
+map("n", "gl", "g$", {
+  desc = "Jump to last screen character"
+})
+
+-- Ctrl Backspace
+map('i', '<C-H>', '<C-W>', {
+  desc = "Delete word backwards"
+})
+
+-- Go to start or end of line easier
+map({
+  "n",
+  "x"
+}, "<A-h>", "^", {
+  desc = "Go to beginning of line"
+})
+map({
+  "n",
+  "x"
+}, "<A-l>", "g_", {
+  desc = "Go to end of line"
+})
+
+-- insert semicolon in the end
+map("i", "<A-;>", "<Esc>miA;<Esc>`ii", {
+  desc = "insert semicolon in the end"
+})
+-- insert comma in the end
+map("i", "<A-,>", "<Esc>miA,<Esc>`ii", {
+  desc = "insert comma in the end"
+})
+
+-- Undo
+map("i", "<C-z>", "<C-O>u")
+
+-- Insert empty line without entering insert mode
+map("n", "[o", ':<C-u>call append(line("."), repeat([""], v:count1))<CR>', {
+  desc = "Insert empty line below"
+})
+map("n", "]o", ':<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>', {
+  desc = "Insert empty line above"
+})
+map("n", "<A-o>", ':<C-u>call append(line("."), repeat([""], v:count1))<CR>', {
+  desc = "Insert empty line below"
+})
+map("n", "<A-O>", ':<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>', {
+  desc = "Insert empty line above"
+})
+
+-- Insert empty line in insert mode
+map("i", "<A-o>", "<C-O>o", {
+  desc = "Insert empty line below"
+})
+map("i", "<A-O>", "<C-O>O", {
+  desc = "Insert empty line above"
+})
+
+-- Insert blank line
+map("n", "]<Space>", "o<Esc>")
+map("n", "[<Space>", "O<Esc>")
+
 -- Increment/decrement
 map("n", "+", "<C-a>")
 map("n", "-", "<C-x>")
@@ -225,15 +228,10 @@ map("i", "jk", "<ESC>")
 map("i", "kj", "<ESC>")
 map("i", "jj", "<ESC>")
 
--- Terminal Mappings
-map("t", "jk", "<C-\\><C-n>")
-map("t", "kj", "<C-\\><C-n>")
-map("t", "<ESC>", "<C-\\><C-n>")
-
--- Move with shift-arrows
 map("n", "<S-Left>", "<C-w><S-h>", {
   desc = "Move window to the left"
 })
+
 map("n", "<S-Down>", "<C-w><S-j>", {
   desc = "Move window down"
 })
@@ -244,6 +242,37 @@ map("n", "<S-Right>", "<C-w><S-l>", {
   desc = "Move window to the right"
 })
 
+-- Use tab for indenting in visual/select mode
+map("x", "<Tab>", ">gv", {
+  remap = true,
+  desc = "Indent Left"
+})
+map("x", "<S-Tab>", "<gv", {
+  remap = true,
+  desc = "Indent Right"
+})
+
+-- Jump entire buffers throughout jumplist
+map("n", "g<C-i>", function() jump_buffer(1) end, {
+  desc = "Jump to newer buffer"
+})
+map("n", "g<C-o>", function() jump_buffer(-1) end, {
+  desc = "Jump to older buffer"
+})
+
+-- Moving tabs
+map("n", "<A-{>", "<cmd>-tabmove<CR>", {
+  desc = "Tab Move Backwards"
+})
+map("n", "<A-}>", "<cmd>+tabmove<CR>", {
+  desc = "Tab Move Forwards"
+})
+
+-- Quick substitute within selected area
+map("x", "sg", ":s//gc<Left><Left><Left>", {
+  desc = "Substitute Within Selection"
+})
+
 -- Search
 map({
   "n",
@@ -251,13 +280,6 @@ map({
 }, "gw", "*N", {
   desc = "Search word under cursor"
 })
-
--- Fast searching text under cursor with Google with Ctrl+q Ctrl+g
--- I am using ArchLinux so I use the xdg-open command
--- For other file system it can be open
-local searching_google_in_normal =
-  [[:lua vim.fn.system({'xdg-open', 'https://google.com/search?q=' .. vim.fn.expand("<cword>")})<CR>]]
-map("n", "<C-q><C-g>", searching_google_in_normal)
 
 -- Quickfix and Location list mappings
 map("n", "[q", "<cmd>cprevious<CR>zvzz", {
@@ -284,28 +306,54 @@ map("n", "[L", "<cmd>lfirst<CR>zvzz", {
 map("n", "]L", "<cmd>llast<CR>zvzz", {
   desc = "Last location"
 })
-map('n', '<leader>xk', '<cmd>cexpr []<cr>', {
-  desc = 'Clear list'
+map("n", "<leader>xk", "<cmd>cexpr []<cr>", {
+  desc = "Clear list"
 })
-map('n', '<leader>xc', '<cmd>windo lclose <bar> cclose <cr>', {
-  desc = 'Close list'
-})
-map('n', '<leader>xs', '<cmd>cfdo %s/', {
-  desc = 'Search & Replace'
-})
-
--- buffers
-map("n", "<Tab>", "<cmd>bprevious<cr>", {
-  desc = "Prev buffer"
-})
-map("n", "<A-Tab>", "<cmd>bnext<cr>", {
-  desc = "Next buffer"
+map("n", "<leader>xc", "<cmd>windo lclose <bar> cclose <cr>", {
+  desc = "Close list"
 })
 
 -- folds
-map("n", "<leader>z", "<cmd>normal! zMzv<cr>", {
+map("n", "<leader>zo", "<cmd>normal! zMzv<cr>", {
   desc = "Fold all others"
 })
+-- Focus the current fold by closing all others
+map("n", "<leader>zf", "zMzvzz", {
+  desc = "Focus Fold"
+})
+
+map("n", "<leader>zj", "zMzvzz", {
+  desc = "Focus Fold"
+})
+-- Close current fold when open. Always open next fold.
+map("n", "zj", "zcjzOzz", {
+  desc = "Close fold & open next one"
+})
+
+-- Close current fold when open. Always open previous fold.
+map("n", "zk", "zckzOzz", {
+  desc = "Close fold & open previous one"
+})
+
+-- Navigation in command line
+map("c", "<C-h>", "<Home>")
+map("c", "<C-l>", "<End>")
+map("c", "<C-f>", "<Right>")
+map("c", "<C-b>", "<Left>")
+
+-- Split Window Right
+map("n", "<C-\\>", "<C-W>v", {
+  desc = "Split Window Right",
+  remap = true
+})
+
+-- Terminal Mappings
+map("t", "jk", "<C-\\><C-n>")
+map("t", "kj", "<C-\\><C-n>")
+map("t", "<ESC>", "<C-\\><C-n>")
+
+-- compromised backward search when comma is being used as localleader
+map("n", "<A-,>", ",")
 
 -- Some cool remaps
 map("n", "n", "nzzzv")
@@ -321,8 +369,6 @@ map("n", "^", "g^")
 map("n", "0", "g0")
 -- Do not include white space characters when using $ in visual mode,
 map("x", "$", "g_")
--- Always use very magic mode for searching
-map("n", "/", [[/\v]])
 
 -- Add undo break-points
 map("i", "?", "?<c-g>u")
@@ -331,5 +377,13 @@ map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
 
--- compromised backward search when comma is being used as localleader
-map("n", "<A-,>", ",")
+-- Keymaps Dependent to plugins
+
+-- Open Notes Folder
+map("n", "<leader>on", function()
+  Snacks.picker.files({
+    cwd = vim.fn.expand("~/git_repos/notes")
+  })
+end, {
+  desc = "Open Notes"
+})

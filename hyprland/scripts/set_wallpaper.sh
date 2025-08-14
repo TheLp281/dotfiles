@@ -12,8 +12,9 @@ fi
 
 LAST_INDEX=$(cat "$STATE_FILE")
 
-
-IMAGES=($DIR/*.png)
+shopt -s nullglob
+IMAGES=("$DIR"/*.{png,jpg,jpeg,webp,gif})
+shopt -u nullglob
 
 echo "Found images: ${IMAGES[@]}"
 

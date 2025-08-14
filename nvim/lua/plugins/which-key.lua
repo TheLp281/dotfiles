@@ -12,12 +12,20 @@ return {
           "v"
         },
         {
-          "o",
-          group = "Obsidian"
+          "<leader>y",
+          group = "Yank"
         },
         {
-          "a",
+          "<leader>o",
+          group = "Open"
+        },
+        {
+          "<leader>a",
           group = "AI"
+        },
+        {
+          "<leader>t",
+          group = "Time Machine"
         }
       }
     }

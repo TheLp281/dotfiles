@@ -99,17 +99,23 @@ yay -S hyprshot wlogout swww ttf-firacode-nerd --noconfirm
 
 
 ## For neovim
+  ```bash
+  yay -S neovim-git vscode-js-debug --noconfirm
+  sudo pacman -S python-debugpy --noconfirm
+  cp -r ~/.config/dotfiles/nvim/* ~/.config/nvim
+  ```
 
-    yay -S neovim-git vscode-js-debug --noconfirm
-    sudo pacman -S python-debugpy --noconfirm
-    ln -s ~/.config/dotfiles/nvim ~/.config/nvim
+  - Inside neovim, run :Lazy update
+
+
+
 
 ## For music
-
-    sudo pacman -S --noconfirm mpd-mpris
+  ```bash
+  sudo pacman -S --noconfirm mpd-mpris
+  ```
 
 ## For miku cursor
-
 - copy hatsunemiku folder into /usr/share/icons
 
   ```bash
@@ -123,14 +129,12 @@ yay -S hyprshot wlogout swww ttf-firacode-nerd --noconfirm
   ```
 
 ## For copyq theme
-
 - Open the CopyQ main window
 - Open CopyQ Preferences under the File > Preferences menu
 - Click Appearance in the Configuration window
 - Click Load Theme and select theme.ini
 
 ## For candy icons
-
 - Copy candy folder into /usr/share/icons
 
 ```bash
@@ -144,7 +148,6 @@ gsettings set org.gnome.desktop.interface icon-theme 'candy-icon'
 ```
 
 ## For notification center
-
 - Create a symbolic link of swaync config
 
 ```bash
@@ -153,11 +156,10 @@ gsettings set org.gnome.desktop.interface icon-theme 'candy-icon'
 
 
 ## For fish shell
-
 - Install fish packages
 ```bash
   sudo pacman -S --needed --noconfirm fish bat lolcat reflector lynx vifm ncmpcpp expac btrfs-progs snapper thefuck starship
-  yay -S cpuid moc pokemon-colorscripts
+  yay -S cpuid moc pokemon-colorscripts exa
   sudo sh -c "curl https://raw.githubusercontent.com/holman/spark/master/spark -o /usr/local/sbin/spark && chmod +x /usr/local/sbin/spark"
 ```
 
